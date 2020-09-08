@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import logo from './assets/images/logo.svg';
 import Test from './components/Test'
 import '~/App.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'; this is how you import bootstrap
 export default class App extends Component {
     render() {
         return (

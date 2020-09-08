@@ -10,7 +10,9 @@
     "build": "parcel build src/index.html"
   },
   "dependencies": {
+    "bootstrap": "^4.5.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.2.0"
   }
 }
