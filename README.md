@@ -1,11 +1,13 @@
 # hello-dolphin
 
-install project 
-yarn or npm install
+## Node version 12.18.3
 
-Start Server 
-yarn dev
-Build production
-yarn build
+## Install project 
+> yarn or npm install
 
-ReactJs PR Webpage for event hello world (2020). SIT. KMUTT
+## Start Server Dev
+> yarn dev
+## Build production
+> yarn build
+
+###### ReactJs PR Webpage for event hello world (2020). SIT. KMUTT
