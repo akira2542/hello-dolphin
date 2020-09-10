@@ -3,6 +3,7 @@ import style from '~/App.css' // Use Local CSS Not import '~/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css' //this is how you import bootstrap
 
 import Navbar from './components/core/navbar/navbar'
+import SideBar from './components/core/navbar/sidebar'
 import Home from './components/home/home'
 import About from './components/about/about'
 import Team from './components/team/team'
@@ -14,6 +15,7 @@ export default class App extends React.Component {
         return (
             <React.Fragment>
                 <Navbar/>
+                <SideBar/>
                 <Home/>
                 <About/>
                 <Team/>

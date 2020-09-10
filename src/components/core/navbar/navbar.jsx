@@ -13,6 +13,10 @@ const Nav = styled.div `
   	background-color : #A0D6D8;
   	transition : 0.2s ease-in-out;
   	-webkit-transition : 0.2s ease-in-out;
+    display: block;
+      @media (max-width: 1080px) {
+          display: none;
+      }
 `
 const ItemCon = styled.div `
     width: 100%;
@@ -74,7 +78,7 @@ export default class NavBar extends Component {
     render() {
         return (
             <Fragment>
-                <Container className="fixed-top">
+                <Container className="navbar-fixed-top">
                     <Nav id="mainnav">
                         <ItemCon>
                             <LogoCon>
