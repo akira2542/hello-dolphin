@@ -59,10 +59,11 @@ const Close = styled.div`
     }
 `
 const SideNav = styled.div`
+  font-family : 'Itim-Regular' ;
   height: 100%; 
   width: 0; 
   position: fixed; 
-  z-index: 1; 
+  z-index: 2; 
   top: 0; 
   left: 0;
   background-color: #B0CCE5; 
@@ -84,6 +85,7 @@ const Item = styled.a`
 const Overlay = styled.div`
     width: 0;
     height: 100%;
+    z-index: 1;
     top: 0; 
     left: 0;
     position: fixed;
@@ -123,7 +125,7 @@ export default function SideBar() {
                 <Item href="#">Team</Item>
                 <Item href="#">Faqs</Item>
             </SideNav>
-            <Overlay id="side-overlay" />
+            <Overlay id="side-overlay" onClick={collasp} />
         </Fragment>
     )
 }
