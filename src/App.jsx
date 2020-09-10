@@ -43,7 +43,6 @@ export default class App extends React.Component {
         return (
             <React.Fragment>
                 <Globalstyle />
-          
                 <Navbar/>
                 <SideBar/>
                 <Home/>
