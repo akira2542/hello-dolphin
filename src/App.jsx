@@ -32,10 +32,6 @@ const Globalstyle = createGlobalStyle`
     font-display: swap; 
 
 }
-h1{
-    font-family: 'Itim-Regular';
-}
-
 `
 
 export default class App extends React.Component {
