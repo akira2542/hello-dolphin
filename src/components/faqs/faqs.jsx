@@ -21,7 +21,7 @@ const AccordianHeading = styled.div`
 width: 100%;
 background-color: #C1D3E8; 
 `
-const Indicator = style 
+const Indicator = styled.div`` 
 
 const AccordianContent = styled.div`
 width: 100%;
