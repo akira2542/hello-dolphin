@@ -11,7 +11,8 @@ const Nav = styled.div `
   	padding: 0;
     width: 100vw;
     height: 88px;
-  	background-color : #A0D6D8;
+  	background-color : #A0D6D800;
+    color : white;
   	transition : 0.2s ease-in-out;
   	-webkit-transition : 0.2s ease-in-out;
     display: block;
@@ -62,8 +63,12 @@ export default class NavBar extends Component {
         let mainnav = document.getElementById('mainnav');
         if (window.scrollY > 100) {
             mainnav.style.height = '67px'
+            mainnav.style.backgroundColor = '#A0D6D8ff'
+            mainnav.style.color = 'black'
         } else {
             mainnav.style.height = '88px'
+            mainnav.style.backgroundColor = '#A0D6D800'
+            mainnav.style.color = 'white'
         }
     }
 
