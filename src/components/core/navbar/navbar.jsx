@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import logo from '../../../assets/images/navbar/logo.png'
 
 const Container = styled.div `
+font-family : 'Itim-Regular' ;
 `
 const Nav = styled.div `
   	margin: 0;
