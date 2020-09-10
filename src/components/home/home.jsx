@@ -3,14 +3,13 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import logo from '../../assets/images/home/Logo.png'
 import facebook from '../../assets/images/home/facebook.png'
-import SubHead from '../core/text'
+import Footer from './homefooter'
 
 const HomeContainer = styled.div`
     display: table;
     position: relative;
     height: 100vh;
     width: 100%;
-    z-index: 1;
     font-family : 'Itim-Regular' ;
     background-color: #023058;
 `
