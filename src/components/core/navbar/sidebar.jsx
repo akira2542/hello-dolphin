@@ -12,12 +12,12 @@ left: 20px;
 cursor: pointer;
 width: 35px;
 height: 30px;
-/* background-color : black; */
+
  & span,& span::before,& span::after {
   border-radius: 1px;
   height: 5px;
   width: 35px;
-  background: black;
+  background: white;
   position: absolute;
   content: '';
  }
@@ -72,6 +72,7 @@ const SideNav = styled.div`
   transition: 0.5s; 
 `
 const Item = styled.a`
+    font-size: 20px;
     color: white;
     text-decoration: none;
     display: block;
@@ -123,7 +124,7 @@ export default function SideBar() {
                 <Item href="#">Home</Item>
                 <Item href="#">About</Item>
                 <Item href="#">Team</Item>
-                <Item href="#">Faqs</Item>
+                <Item href="#">FAQs</Item>
             </SideNav>
             <Overlay id="side-overlay" onClick={collasp} />
         </Fragment>

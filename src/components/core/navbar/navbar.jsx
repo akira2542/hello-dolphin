@@ -13,6 +13,7 @@ const Nav = styled.div `
     height: 88px;
   	background-color : #A0D6D800;
     color : white;
+    font-size:24px ;
   	transition : 0.2s ease-in-out;
   	-webkit-transition : 0.2s ease-in-out;
     display: block;
@@ -41,9 +42,10 @@ const Item = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
     :hover {
         background-color : #D3F7F8;
+        color: black;
     }
 `
 const LogoCon = styled.div `
@@ -54,7 +56,7 @@ const Logo = styled.img `
 `
 const FlexHolder = styled.div `
     margin-left: auto;
-    width: 185px;
+    width: 192px;
 `
 export default class NavBar extends Component {
 
@@ -100,7 +102,7 @@ export default class NavBar extends Component {
                                 <Item>From</Item>
                             </Link>
                             <Link href="#">
-                                <Item>Faqs</Item> 
+                                <Item>FAQs</Item> 
                             </Link>
                             <FlexHolder/>
                         </ItemCon>
