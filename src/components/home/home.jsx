@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 import logo from '../../assets/images/home/Logo.png'
 import facebook from '../../assets/images/home/facebook.png'
@@ -9,7 +9,6 @@ const HomeContainer = styled.div`
     display: table;
     position: relative;
     height: 100vh;
-    width: 100%;
     font-family : 'Itim-Regular' ;
     background-color: #023058;
 `
@@ -21,7 +20,7 @@ const HomeContent = styled.div`
 `
 
 const Logo = styled.img`
-    width: 55%;
+    width: 50%;
 `
 
 const Facebook = styled.img`
@@ -44,18 +43,20 @@ const Fanpage = styled.a`
 export default class home extends Component {
     render() {
         return (
-            <HomeContainer>
-                <HomeContent>
-                    <Logo src={logo} alt="Hello World Dolphin Logo" />
-                    <br />
-                    <Fanpage href="https://www.facebook.com/SITHelloWorld" target="_blank">
-                        <Facebook src={facebook} alt="Facebook Logo" />
-                        SIT HelloWorld
-                    </Fanpage>
-                    
-                    
-                </HomeContent>
-            </HomeContainer>
+
+            <Fragment>
+                <HomeContainer>
+                    <HomeContent>
+                        <Logo src={logo} alt="Hello World Dolphin Logo" />
+                        <br />
+                        <Fanpage href="https://www.facebook.com/SITHelloWorld" target="_blank">
+                            <Facebook src={facebook} alt="Facebook Logo" />
+                            SIT HelloWorld
+                        </Fanpage>
+                    </HomeContent>
+                </HomeContainer>
+                <Footer />
+            </Fragment>
         )
     }
 }
