@@ -8,35 +8,71 @@ import game_design_logo from '../../assets/images/team/game-design.png'
 import game_dev_logo from '../../assets/images/team/game-dev.png'
 import 'bootstrap/dist/css/bootstrap.min.css' //this is how you import bootstrap
 import styled from 'styled-components'
+import {Header,SubHeader,Content} from '../core/text'
 
-
-const FontColor = styled.div`
-    color : ${props => props.color}
+const Button = styled.div`
+    color : ${props => props.color};
+    cursor : pointer;
+    font-size : 12px;
+    :hover {
+        color : black;
+        background-color : ${props => props.color};
+        transition : .4s ease;
+    }
+    border : 2px solid ${props => props.color};
+    padding : 10px;
+    text-align : center;
+    margin : 20px 0 0 0;
+    font-family : "Itim-Regular";
+    border-radius : 9px;
 `
-const ColorHover = styled.div`
-
+const Container = styled.div`
+    background-color :  #023058;  
+    height : 100vh;
+    color : white;
+    font-family : "Rye-Regular";
+`
+const SubjectItemContainer = styled.div`
+    display : flex;
+    width : 100%;
+    align-items : flex-end;
+`
+const SubjectItem = styled.div`
+    margin : 0 10px;
+    display : flex;
+    flex-direction : column;
+    justify-items : center;
+`
+const DolphinImg = styled.div`
+    width : 100%;
+`
+const SubjectLogo = styled.div`
+    width : 91px;
+    margin : 0 auto;
+`
+const OtherSubject = styled.h4`
+    font-size: 32px;
+    font-family : "Itim-Regular";
 `
 function Subject(props){
     return (
-        <div className="subject-item">
-            <img src={props.src} alt={props.name}/>
-            <div className={`subject-item ${props.className}-btn`} >
-                <FontColor color="black">
-                    <p>{props.name}</p>
-                </FontColor>
-            </div>
-        </div>
+        <SubjectItem>
+            <SubjectLogo><img src={props.src} alt={props.name}/></SubjectLogo>
+            <Button color={props.color} >
+                {props.name}
+            </Button>
+        </SubjectItem>
     )
 }
 function TotalSubject(){
     return (
-        <div className="total-subject">
-            <Subject src={fe_logo} className="front-end" name="Front-End"/>
-            <Subject src={web_design_logo} className="web-design" name="Web Design" />
-            <Subject src={infra_logo} className="infrastructure" name="Infrastructure"/>
-            <Subject src={game_design_logo} className="game-design" name="Game Design"/>
-            <Subject src={game_dev_logo} className="game-development" name="Game Development"/>
-        </div>
+        <SubjectItemContainer>
+            <Subject src={fe_logo}  name="Front-End" color="#B9E6E9"/>
+            <Subject src={web_design_logo}  name="Web Design" color="#E8BEC6"/>
+            <Subject src={infra_logo} name="Infrastructure" color="#A8E9A1"/>
+            <Subject src={game_design_logo}  name="Game Design" color="#FFED8C"/>
+            <Subject src={game_dev_logo}  name="Game Development" color="#FFAC3A"/>
+        </SubjectItemContainer>
     )
 }
 export default class Team extends Component {
@@ -44,7 +80,7 @@ export default class Team extends Component {
         super(props)
         this.state = {
             subject_header : "Front-End",
-            subject_description : ""
+            subject_description : "ในสาขานี้จะพาไปเปิดโลกของการเป็นนักพัฒนาเว็บไซต์ ซึ่งจะได้เรียนรู้ตั้งเเต่ HTML & CSS, Javascript เเละการใช้ git จนถึงการเขียน React ซึ่งเป็นสิ่งที่มีความต้องการสูง ในสายงาน IT ในปัจจุบัน"
         }
 
         this.handleEvent = this.handleEvent.bind(this)
@@ -55,26 +91,36 @@ export default class Team extends Component {
     render() {
         return (
             <Fragment>
-                <div className="container-fluid">
-                <h1 className="team-header"></h1>
-                <div className="row">
-                    <div className="col">
-                    <section className="subject-zone">
-                        <h2>{this.state.subject_header}</h2>
-                        <p>{this.state.subject_description}</p>
-                        <button className="register">Register</button>
-                    </section>
-                    <section className="other-subject-zone">
-                        <h4 className="other-subject">สาขาอื่นๆ</h4>
-                        <TotalSubject />
-                    </section>
+                <Container className="container-fluid">
+                    <div className="row">
+                        <div className="col">
+                            <Header 
+                                color="white"
+                                textAlign="left"
+                                headerText="Teams"
+                            />
+                            <section className="subject-zone">
+                                <SubHeader 
+                                    color="white"
+                                    textAlign="left"
+                                    subHeaderText={this.state.subject_header}
+                                />
+                                <Content 
+                                    color="white"
+                                    content={this.state.subject_description}
+                                />
+                                <button className="register">Register</button>
+                            </section>
+                            <section className="other-subject-zone">
+                                <OtherSubject>สาขาอื่นๆ</OtherSubject>
+                                <TotalSubject />
+                            </section>
+                            </div>
+                        <div className="col">
+                            <DolphinImg><img src={dolphin} alt="Dolphin"/></DolphinImg>
+                        </div>
                     </div>
-                    <div className="col">
-                        <img src={dolphin}  alt="Dolphin"/>
-                    </div>
-                </div>
-
-                </div>
+                </Container>
             </Fragment>
         )
     }
