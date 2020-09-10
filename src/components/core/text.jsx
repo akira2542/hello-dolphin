@@ -20,7 +20,7 @@ const HeadLine = styled.h1`
 const SubHead = styled.h2`
     font-family: 'Rye-Regular', sans-serif;
     font-size: 20px;
-    text-align: center;
+    text-align: ${props => props.textAlign};
     color: ${props => props.color};
 
     @media (min-width: 768px) {
@@ -64,7 +64,9 @@ export const Header = (props) => {
 
 export const SubHeader = (props) => {
     return (
-        <SubHead color = {props.color}>
+        <SubHead color = {props.color} 
+            textAlign = {props.textAlign}
+        >
             {props.subHeaderText}
         </SubHead>
     )
