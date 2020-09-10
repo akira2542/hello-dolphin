@@ -78,7 +78,7 @@ export default class NavBar extends Component {
     render() {
         return (
             <Fragment>
-                <Container className="navbar-fixed-top">
+                <Container className="fixed-top">
                     <Nav id="mainnav">
                         <ItemCon>
                             <LogoCon>

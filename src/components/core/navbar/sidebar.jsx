@@ -6,6 +6,7 @@ import styled from 'styled-components'
 const Open = styled.div`
 
 position: fixed;
+z-index: 1;
 top: 20px;
 left: 20px;
 cursor: pointer;
