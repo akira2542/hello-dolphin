@@ -31,7 +31,6 @@ pipeline {
           sh 'whoami'
           sh 'pwd'
           sh 'ls'
-          sh 'cd /var/jenkins_home/workspace/Helloworld-dolphin_WebPR_dev'
           sh'''
             #!/bin/bash
             whoami
