@@ -53,7 +53,7 @@ pipeline {
 
     stage('Tagging Docker Image') {
       steps{
-        sh' sudo tag hellodolphin gunfluenza/hellodolphin:build-${BUILD_NUMBER}'
+        sh' sudo docker tag hellodolphin gunfluenza/hellodolphin:build-${BUILD_NUMBER}'
       }
     }
     
