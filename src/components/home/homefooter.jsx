@@ -13,38 +13,112 @@ import fish_orange from '../../assets/images/home/fish_orange.png'
 const CoralShadowLeft = styled.img`
     position: absolute;
     bottom: 0px;
-    width: 53%;
+    width: 70%;
+
+    @media (min-width: 1366px) {
+        width: 54%;
+    }
+
+    @media (min-width: 1440px) {
+        width: 53%;
+    }
 `
 
 const CoralOrange = styled.img`
     position: absolute;
-    bottom: 28%;
-    left: 12%;
-    width: 10%;
+    bottom: 10%;
+    left: 15%;
+    width: 20%;
+
+    @media (min-width: 375px) {
+        bottom: 8.8%;
+    }
+
+    @media (min-width: 411px) {
+        bottom: 9%;
+    }
+
+    @media (min-width: 768px) {
+        width: 15%;
+        bottom: 14%;
+    }
+
+    @media (min-width: 1024px) {
+        width: 15%;
+        bottom: 13%;
+        left: 18%;
+    }
+
+    @media (min-width: 1366px) {
+        width: 10%;
+        bottom: 20%;
+        left: 13%;
+    }
+
+    @media (min-width: 1440px) {
+        width: 10%;
+        bottom: 21%;
+        left: 13%;
+    }
+
+    @media (min-width: 1500px) {
+        width: 10%;
+        bottom: 26%;
+        left: 13%;
+    }
 `
 
 const ClayDarkBlue = styled(CoralShadowLeft)`
-    width: 30%;
+    width: 35%;
     bottom: -2%;
+    height: 12%;
+
+    @media (min-width: 1366px) {
+        width: 30%;
+        height: auto;
+    }
+
+    @media (min-width: 1440px) {
+        width: 30%;
+        height: auto;
+    }
 `
 
 const CoralGreen = styled.img`
     position: absolute;
-    bottom: 8%;
+    bottom: 5%;
     left: 5%;
-    width: 5%;
+    width: 8%;
+
+    @media (min-width: 1366px) {
+        width: 5%;
+        bottom: 5%;
+    }
+
+    @media (min-width: 1440px) {
+        width: 5%;
+        bottom: 8%;
+    }
 `
 
 const DarkBlueSand = styled(CoralShadowLeft)`
     width: 100%;
-    height: 10%;
+    height: 5%;
+
+    @media (min-width: 1440px) {
+        height: 10%;
+    }
 `
 
 const CoralShadowRight = styled.img`
     position: absolute;
     right: 0%;
     bottom: 0px;
-    width: 60%;
+    width: 65%;
+
+    @media (min-width: 1024px) {
+        width: 60%;
+    }
 `
 
 const CoralDark = styled(CoralShadowRight)`
@@ -53,20 +127,34 @@ const CoralDark = styled(CoralShadowRight)`
 
 const FishBlue = styled.img`
     position: absolute;
-    bottom: 40%;
+    bottom: 20%;
     left: 5%;
-    width: 5%;
+    width: 10%;
+
+    @media (min-width: 1366px) {
+        width: 8%;
+        bottom: 30%;
+    }
+
+    @media (min-width: 1440px) {
+        bottom: 40%;
+        width: 5%;
+    }
 `
 
 const FishOrange = styled(FishBlue)`
     left: 45%;
-    bottom: 10%;
+    bottom: 5%;
+
+    @media (min-width: 1440px) {
+        bottom: 10%;
+    }
 `
 export default class homefooter extends Component {
     render() {
         return (
             <Fragment>
-                <FishBlue src={fish_blue} />                
+                <FishBlue src={fish_blue} />
                 <CoralOrange src={coral_orange} />
                 <CoralShadowLeft src={coral_shadow_left} />
                 <CoralShadowRight src={coral_shadow_right} />
