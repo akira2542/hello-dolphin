@@ -5,7 +5,7 @@
 replicaCount: 4
 
 image:
-  repository: gunfluenza/12frontend
+  repository: gunfluenza/hellodolphin
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart version.
   tag: ""
