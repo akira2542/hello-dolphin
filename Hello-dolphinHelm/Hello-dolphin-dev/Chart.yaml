@@ -1,6 +1,6 @@
 apiVersion: v2
-name: Hellocockatiel-master
-description: for deploying Hellocockatiel-master services
+name: Hellodolphin-dev
+description: for deploying Hellodolphin-dev services
 
 # A chart can be either an 'application' or a 'library' chart.
 #
