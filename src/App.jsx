@@ -9,6 +9,7 @@ import About from './components/about/about'
 import Team from './components/team/team'
 import Faqs from './components/faqs/faqs'
 import Sponsor from './components/sponsor/sponsor'
+import SponsorFooter from './components/sponsor/sponsorfooter'
 import ryeFont1 from './assets/font-family/Rye/Rye-Regular.woff';
 import ryeFont2 from './assets/font-family/Rye/Rye-Regular.woff2';
 import itimFont1 from './assets/font-family/Itim/Itim-Regular.woff';
@@ -46,6 +47,7 @@ export default class App extends React.Component {
                 <Team/>
                 <Faqs/>
                 <Sponsor/>
+                <SponsorFooter/>
             </React.Fragment>
         )
     }
