@@ -21,16 +21,42 @@ const HomeContent = styled.div`
 `
 
 const Logo = styled.img`
-    width: 50%;
+    width: 100%;
+
+    @media (min-width: 1024px) {
+        width: 80%;
+    }
+
+    @media (min-width: 1366px) {
+        width: 60%;
+    }
+
+    @media (min-width: 1500x) {
+        width: 50%;
+    }
 `
 
 const Facebook = styled.img`
-    width: 64px;
-    margin-right: 1%;
+    width: 10%;
+    margin-right: 3%;
+    
+    @media (min-width: 1024px) {
+        width: 8%;
+    }
+
+    @media (min-width: 1440px) {
+        margin-right: 2%;
+        width: 5%;
+    }
+
+    @media (min-width: 1024px) {
+        width: 4%;
+        margin-right: 1%;
+    }
 `
 
 const Fanpage = styled.a`
-    font-size: 30px;
+    font-size: 24px;
     vertical-align: middle;
     margin-left: 1%;
     color: white;
@@ -38,6 +64,14 @@ const Fanpage = styled.a`
     :hover {
         text-decoration: none;
         color: white;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 36px;
+    }
+
+    @media (min-width: 1440px) {
+        
     }
 `
 
