@@ -150,6 +150,8 @@ const FishOrange = styled(FishBlue)`
         bottom: 10%;
     }
 `
+
+
 export default class homefooter extends Component {
     render() {
         return (

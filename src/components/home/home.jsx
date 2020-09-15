@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import logo from '../../assets/images/home/Logo.png'
 import facebook from '../../assets/images/home/facebook.png'
 import Footer from './homefooter'
+import dolphin from '../../assets/images/home/dolphin.png'
 
 const HomeContainer = styled.div`
     display: table;
@@ -40,6 +41,26 @@ const Fanpage = styled.a`
     }
 `
 
+const Dolphin = styled.img`
+    display: none;
+
+    @media (min-width: 768px) {
+        display: block;
+        position: absolute;
+        width: 35%;
+        right: 3%;
+        bottom: 1%;
+    }
+
+    @media (min-width: 1366px) {
+        width: 27%;
+    }
+
+    @media (min-width: 1500px) {
+        width: 23%;
+    }
+`
+
 export default class home extends Component {
     render() {
         return (
@@ -56,6 +77,7 @@ export default class home extends Component {
                     </HomeContent>
                 </HomeContainer>
                 <Footer />
+                <Dolphin src={dolphin} />
             </Fragment>
         )
     }
