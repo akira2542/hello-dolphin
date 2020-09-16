@@ -65,7 +65,7 @@ pipeline {
     
     stage('Deploy Hellodolphin WebPR on Helm') {
       steps {
-              sh "helm upgrade -i -f Hello-dolphinHelm/Hello-dolphin-${BRANCH_NAME}/values.yaml --wait --namespace=dev webprdev Hello-dolphinHelm/Hello-dolphin-${BRANCH_NAME}"
+              sh "helm upgrade -i -f Hello-dolphinHelm/Hello-dolphin-${BRANCH_NAME}/values.yaml --wait --namespace=${BRANCH_NAME} webpr${BRANCH_NAME} Hello-dolphinHelm/Hello-dolphin-${BRANCH_NAME}"
       } // End steps
     } // End stage
 
