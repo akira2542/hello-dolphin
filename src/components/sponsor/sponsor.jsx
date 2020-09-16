@@ -1,12 +1,21 @@
 
 import React from 'react'
-
+import styled from 'styled-components'
+import { Header } from '../core/text'
+import Footer from './sponsorfooter'
 // if state are needed change to class component as you se fit - ruangrit 
+
+const Container = styled.div`
+width: 100%;
+height: 100vh;
+background-color: #023058;
+`
 
 export default function Sponsor() {
     return (
-        <div>
-            
-        </div>
+        <Container>
+            <Header color="white " textAlign="center" headerText="Sponsor" />
+            <Footer/>
+        </Container>
     )
 }
