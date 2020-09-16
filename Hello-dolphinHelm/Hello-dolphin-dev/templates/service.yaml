@@ -11,5 +11,6 @@ spec:
       targetPort: http
       protocol: TCP
       name: devport
+      nodePort: 31000
   selector:
     {{- include "Hellocockatiel.selectorLabels" . | nindent 4 }}
