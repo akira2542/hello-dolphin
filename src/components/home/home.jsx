@@ -5,8 +5,10 @@ import logo from '../../assets/images/home/Logo.png'
 import facebook from '../../assets/images/home/facebook.png'
 import Footer from './homefooter'
 import dolphin from '../../assets/images/home/dolphin.png'
+import Fallenstar from './fallenstar'
 
 const HomeContainer = styled.div`
+    overflow: hidden;
     display: table;
     position: relative;
     height: 100vh;
@@ -21,8 +23,9 @@ const HomeContent = styled.div`
 `
 
 const Logo = styled.img`
+    position :relative;
     width: 100%;
-
+    z-index : 100;
     @media (min-width: 1024px) {
         width: 80%;
     }
@@ -102,6 +105,7 @@ export default class home extends Component {
             <Fragment>
                 <HomeContainer>
                     <HomeContent>
+                        <Fallenstar/>
                         <Logo src={logo} alt="Hello World Dolphin Logo" />
                         <br />
                         <Fanpage href="https://www.facebook.com/SITHelloWorld" target="_blank">
