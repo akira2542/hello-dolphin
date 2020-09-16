@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "Hellocockatiel.fullname" . }}
+  name: {{ include "Hellodolphin.fullname" . }}
   labels:
-    {{- include "Hellocockatiel.labels" . | nindent 4 }}
+    {{- include "Hellodolphin.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -13,4 +13,4 @@ spec:
       name: devport
       nodePort: 31000
   selector:
-    {{- include "Hellocockatiel.selectorLabels" . | nindent 4 }}
+    {{- include "Hellodolphin.selectorLabels" . | nindent 4 }}

@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "{{ include "Hellocockatiel.fullname" . }}-test-connection"
+  name: "{{ include "Hellodolphin.fullname" . }}-test-connection"
   labels:
-    {{- include "Hellocockatiel.labels" . | nindent 4 }}
+    {{- include "Hellodolphin.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test-success
 spec:
@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "Hellocockatiel.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "Hellodolphin.fullname" . }}:{{ .Values.service.port }}']
   restartPolicy: Never

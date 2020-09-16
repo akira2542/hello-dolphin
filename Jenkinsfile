@@ -63,7 +63,7 @@ pipeline {
       }
     }
     
-    stage('Deploy HelloCockatiel WebPR on Helm') {
+    stage('Deploy Hellodolphin WebPR on Helm') {
       steps {
               sh "helm upgrade -i -f Hello-dolphinHelm/Hello-dolphin-${BRANCH_NAME}/values.yaml --wait --namespace=dev webprdev Hello-dolphinHelm/Hello-dolphin-${BRANCH_NAME}"
       } // End steps
