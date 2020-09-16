@@ -1,5 +1,5 @@
 apiVersion: v2
-name: Hellodolphin-dev
+name: hellodolphin
 description: for deploying Hellodolphin-dev services
 
 # A chart can be either an 'application' or a 'library' chart.
