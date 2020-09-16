@@ -1,13 +1,21 @@
-# hello-dolphin
+![hellodolphin-logo ](https://www.img.in.th/images/13daeed0a227eb08f7df78a44f13d72e.png)
+# Helloworld-Dolphin WebPR
+by #IT25 developer team SIT,KMUTT
 
-## Node version 12.18.3
+## Requirements
+- node:12.18.3
+- yarn:latest
 
-## Install project 
-> yarn or npm install
+## Installing dependencies's project
 
-## Start Server Dev
-> yarn dev
-## Build production
-> yarn build
+    yarn or npm install
 
-###### ReactJs PR Webpage for event hello world (2020). SIT. KMUTT
+
+## Starting develop server
+
+    yarn dev
+
+
+## building project
+
+    yarn build
