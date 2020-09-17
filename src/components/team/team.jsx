@@ -8,6 +8,30 @@ import game_design_logo from '../../assets/images/team/game-design.png'
 import game_dev_logo from '../../assets/images/team/game-dev.png'
 import styled from 'styled-components'
 
+const theme = {
+    frontEnd : {
+        primaryColor : "#B9E6E9",
+        secondaryColor : "#31CBED"
+    },
+    webDesign : {
+        primaryColor : "#E8BEC6",
+        shadow : "#DB6CBE"
+    },
+    infrastructure : {
+        primaryColor : "#A8E9A1",
+        shadow : "#93EB98"
+    },
+    gameDesign : {
+        primaryColor : "#FFED8C",
+        shadow : "#FFEE7C"
+    },
+    gameDev : {
+        primaryColor : "#FFAC3A",
+        shadow : "#FFA700"
+    }
+    
+}
+
 const Button = styled.div`
     color : ${props => props.color};
     cursor : pointer;
@@ -24,8 +48,9 @@ const Button = styled.div`
         color : black;
         background-color : ${props => props.color};
         transition : .4s ease;
-        box-shadow :  0px 0px 10px 1px ${props => props.shadow};
+        box-shadow :  0px 0px 15px 1px ${props => props.shadow};
     }
+   
 `
 const Container = styled.div`
     background-color :  #023058;  
@@ -43,11 +68,11 @@ const SubjectItem = styled.div`
     display : flex;
     flex-direction : column;
     justify-items : center;
-    :hover div{
+    :hover div {
         color : black;
         background-color : ${props => props.color};
         transition : .4s ease;
-        box-shadow :  0px 0px 10px 1px ${props => props.shadow};
+        box-shadow :  0px 0px 15px 1px ${props => props.shadow};
     }
 `
 const SubjectLogo = styled.div`
@@ -70,8 +95,9 @@ const Header = styled.h1`
     color : white;
 ` 
 const SubHeader = styled.h2`
-    font-size : 72px;
+    font-size : 60px;
     color : white;
+    transition : .5s ease;
 `
 const Wrapper = styled.div`
     max-width : 90vw;
@@ -99,32 +125,64 @@ function Subject(props){
 }
 function TotalSubject(props){
     return (
-        <SubjectItemContainer>
-            <Subject src={fe_logo}  name="Front-End" color="#B9E6E9" shadow="#31CBED" onClick={() => props.onClick(0)} />
-            <Subject src={web_design_logo}  name="Web Design" color="#E8BEC6" shadow="#DB6CBE" onClick={() => props.onClick(1)} />
-            <Subject src={infra_logo} name="Infrastructure" color="#A8E9A1" shadow="#93EB98" onClick={() => props.onClick(2)}  />
-            <Subject src={game_design_logo}  name="Game Design" color="#FFED8C" shadow="#FFEE7C" onClick={() => props.onClick(3)}  />
-            <Subject src={game_dev_logo}  name="Game Development" color="#FFAC3A" shadow="#FFA700" onClick={() => props.onClick(4)}  />
-        </SubjectItemContainer>
+    <SubjectItemContainer>
+        <Subject src={fe_logo}  name="Front-End" color={theme.frontEnd.primaryColor} shadow={theme.frontEnd.secondaryColor} onClick={() => props.onClick(0)} />
+        <Subject src={web_design_logo}  name="Web Design" color={theme.webDesign.primaryColor} shadow={theme.webDesign.shadow} onClick={() => props.onClick(1)} />
+        <Subject src={infra_logo} name="Infrastructure" color={theme.infrastructure.primaryColor} shadow={theme.infrastructure.shadow} onClick={() => props.onClick(2)}  />
+        <Subject src={game_design_logo}  name="Game Design" color={theme.gameDesign.primaryColor} shadow={theme.gameDesign.shadow} onClick={() => props.onClick(3)}  />
+        <Subject src={game_dev_logo}  name="Game Development" color={theme.gameDev.primaryColor} shadow={theme.gameDev.shadow} onClick={() => props.onClick(4)}  />
+    </SubjectItemContainer>
     )
 }
 export default class Team extends Component {
     state = {
-        subject_header : "Front-End",
+        subject_header : [
+            "Front-End",
+            "Web design",
+            "Infrastructure",
+            "Game Design",
+            "Game Developer"
+        ],
         subject_description : [
-            `ในสาขานี้จะพาไปเปิดโลกของการเป็นนักพัฒนาเว็บไซต์ ซึ่งจะได้เรียนรู้ตั้งเเต่ HTML & CSS,
-            Javascript เเละการใช้ git จนถึงการเขียน React ซึ่งเป็นสิ่งที่มีความต้องการสูง ในสายงาน IT ในปัจจุบัน`,
+            `ในสาขานี้จะพาไปเปิดโลกของการเป็นนักพัฒนาเว็บไซต์ ซึ่งจะได้เรียนรู้ตั้งเเต่ HTML & CSS, Javascript เเละการใช้ git จนถึงการเขียน React ซึ่งเป็นสิ่งที่มีความต้องการสูง ในสายงาน IT ในปัจจุบัน`,
             `2`
         ] 
     }
 
+    changeTopic(index){
+        const pElement = document.getElementsByClassName('content');
+        const h2Element = document.getElementsByTagName('h2');
+
+        h2Element[0].innerText = this.state.subject_header[index];
+        pElement[0].innerText = this.state.subject_description[index];
+    }
+
+    setColor(primary,shadow,index){
+        primary = theme.frontEnd.primaryColor;
+    }
+
+    activeButton(index){
+        const activeElement = document.getElementsByClassName("active");
+        const activeChildNode1 = activeElement[index].childNodes[0];
+        const activeChildNode2 = activeElement[index].childNodes[1];
+
+        let primary;
+        let shadow;
+        this.setColor(primary);
+        activeChildNode1.style.color = 'black';
+        activeChildNode2.style.color = 'black';
+        console.log(primary);
+        // activeChildNode2.style.backgroundColor = ; 
+        // color : black;
+        // background-color : ${props => props.color};
+        // transition : .4s ease;
+        // box-shadow :  0px 0px 15px 1px ${props => props.shadow};
+        // const 
+    }
 
     handleClick = (index)=> {
-        const activeElement = document.getElementsByClassName("active");
-        const pElement = document.getElementsByClassName('content')[0];
-
-        // activeElement[index].style.  
-        pElement.innerHTML = this.state.subject_description[index];
+        this.changeTopic(index);
+        this.activeButton(index); 
     }
 
     render() {
@@ -135,7 +193,7 @@ export default class Team extends Component {
                     <Column>
                         <Header>Teams</Header>
                         <section className="subject-zone">
-                            <SubHeader>{this.state.subject_header}</SubHeader>
+                            <SubHeader>{this.state.subject_header[0]}</SubHeader>
                             <Content><p className="content">{this.state.subject_description[0]}</p></Content>
                             <Button 
                                 color="#B9E6E9" 
