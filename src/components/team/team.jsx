@@ -6,7 +6,8 @@ import web_design_logo from '../../assets/images/team/web-design.png'
 import infra_logo from '../../assets/images/team/infra.png'
 import game_design_logo from '../../assets/images/team/game-design.png'
 import game_dev_logo from '../../assets/images/team/game-dev.png'
-import styled from 'styled-components'
+import styled , {keyframes} from 'styled-components'
+
 
 const theme = {
     frontEnd : {
@@ -32,8 +33,21 @@ const theme = {
     
 }
 
+const wipWupAnimation = (shadow) => keyframes`
+    0% {
+        box-shadow :  0px 0px 15px 1px ${shadow};
+    }
+    50% {
+        box-shadow :  0px 0px 26px 1px ${shadow};
+    }
+    100%{
+        box-shadow :  0px 0px 15px 1px ${shadow};
+    }
+
+`
+
 const Button = styled.div`
-    color : ${props => props.color};
+    color : ${props => props.isActive ? "black" : props.color};
     cursor : pointer;
     font-size : ${props => props.fontSize};
     border : 2px solid ${props => props.color};
@@ -44,13 +58,15 @@ const Button = styled.div`
     border-radius : 9px;
     margin : 20px auto;
     width : ${props => props.width};
+    background-color : ${props => props.isActive ? props.color : "none"};
+    box-shadow :  0px 0px 15px 1px ${props => props.isActive ? props.shadow : "none"};
     :hover {
         color : black;
         background-color : ${props => props.color};
         transition : .4s ease;
         box-shadow :  0px 0px 15px 1px ${props => props.shadow};
     }
-   
+    animation : ${props => props.isActive? wipWupAnimation(props.shadow) : "none"} 4s ease-in-out infinite ;
 `
 const Container = styled.div`
     background-color :  #023058;  
@@ -85,6 +101,8 @@ const SubjectLogo = styled.div`
     margin : 0 auto;
     border-radius : 50%;
     cursor : pointer;
+    box-shadow :  0px 0px 15px 1px ${props => props.isActive ? props.shadow : "none"};
+    animation : ${props => props.isActive? wipWupAnimation(props.shadow) : "none"} 4s ease-in-out infinite ;
 `
 const OtherSubject = styled.h4`
     font-size: 32px;
@@ -97,7 +115,6 @@ const Header = styled.h1`
 const SubHeader = styled.h2`
     font-size : 60px;
     color : white;
-    transition : .5s ease;
 `
 const Wrapper = styled.div`
     max-width : 90vw;
@@ -118,19 +135,19 @@ const Column = styled.div`
 function Subject(props){
     return (
         <SubjectItem color={props.color} shadow={props.shadow} className="active" onClick={props.onClick}>
-            <SubjectLogo  src={props.src} />
-            <Button  color={props.color} fontSize={"12px"} > {props.name} </Button>
+            <SubjectLogo  src={props.src} isActive={props.isActive} shadow={props.shadow} />
+            <Button  color={props.color} fontSize={"12px"} isActive={props.isActive} shadow={props.shadow} > {props.name} </Button>
         </SubjectItem>
     )
 }
 function TotalSubject(props){
     return (
     <SubjectItemContainer>
-        <Subject src={fe_logo}  name="Front-End" color={theme.frontEnd.primaryColor} shadow={theme.frontEnd.secondaryColor} onClick={() => props.onClick(0)} />
-        <Subject src={web_design_logo}  name="Web Design" color={theme.webDesign.primaryColor} shadow={theme.webDesign.shadow} onClick={() => props.onClick(1)} />
-        <Subject src={infra_logo} name="Infrastructure" color={theme.infrastructure.primaryColor} shadow={theme.infrastructure.shadow} onClick={() => props.onClick(2)}  />
-        <Subject src={game_design_logo}  name="Game Design" color={theme.gameDesign.primaryColor} shadow={theme.gameDesign.shadow} onClick={() => props.onClick(3)}  />
-        <Subject src={game_dev_logo}  name="Game Development" color={theme.gameDev.primaryColor} shadow={theme.gameDev.shadow} onClick={() => props.onClick(4)}  />
+        <Subject src={fe_logo}  name="Front-End" color={theme.frontEnd.primaryColor} shadow={theme.frontEnd.secondaryColor} onClick={() => props.onClick(0)} isActive={props.isActive[0]}/>
+        <Subject src={web_design_logo}  name="Web Design" color={theme.webDesign.primaryColor} shadow={theme.webDesign.shadow} onClick={() => props.onClick(1)} isActive={props.isActive[1]} />
+        <Subject src={infra_logo} name="Infrastructure" color={theme.infrastructure.primaryColor} shadow={theme.infrastructure.shadow} onClick={() => props.onClick(2)} isActive={props.isActive[2]} />
+        <Subject src={game_design_logo}  name="Game Design" color={theme.gameDesign.primaryColor} shadow={theme.gameDesign.shadow} onClick={() => props.onClick(3)} isActive={props.isActive[3]} />
+        <Subject src={game_dev_logo}  name="Game Development" color={theme.gameDev.primaryColor} shadow={theme.gameDev.shadow} onClick={() => props.onClick(4)} isActive={props.isActive[4]}  />
     </SubjectItemContainer>
     )
 }
@@ -146,7 +163,9 @@ export default class Team extends Component {
         subject_description : [
             `ในสาขานี้จะพาไปเปิดโลกของการเป็นนักพัฒนาเว็บไซต์ ซึ่งจะได้เรียนรู้ตั้งเเต่ HTML & CSS, Javascript เเละการใช้ git จนถึงการเขียน React ซึ่งเป็นสิ่งที่มีความต้องการสูง ในสายงาน IT ในปัจจุบัน`,
             `2`
-        ] 
+        ],
+        prevIndex : 0,
+        isActive : [true,false,false,false,false]
     }
 
     changeTopic(index){
@@ -157,30 +176,21 @@ export default class Team extends Component {
         pElement[0].innerText = this.state.subject_description[index];
     }
 
-    setColor(primary,shadow,index){
-        primary = theme.frontEnd.primaryColor;
-    }
-
     activeButton(index){
-        const activeElement = document.getElementsByClassName("active");
-        const activeChildNode1 = activeElement[index].childNodes[0];
-        const activeChildNode2 = activeElement[index].childNodes[1];
-
-        let primary;
-        let shadow;
-        this.setColor(primary);
-        activeChildNode1.style.color = 'black';
-        activeChildNode2.style.color = 'black';
-        console.log(primary);
-        // activeChildNode2.style.backgroundColor = ; 
-        // color : black;
-        // background-color : ${props => props.color};
-        // transition : .4s ease;
-        // box-shadow :  0px 0px 15px 1px ${props => props.shadow};
-        // const 
+        if(index === this.state.prevIndex) return;
+        const active = this.state.isActive;
+        const prevIndex = this.state.prevIndex;
+        if(active[prevIndex]){
+            active[prevIndex] = false;
+            active[index] = true;
+            this.setState({
+                isActive : active,
+                prevIndex : index
+            })
+        }
     }
 
-    handleClick = (index)=> {
+    handleClick = (index) => {
         this.changeTopic(index);
         this.activeButton(index); 
     }
@@ -191,7 +201,7 @@ export default class Team extends Component {
                 <Container>
                     <Wrapper>
                     <Column>
-                        <Header>Teams</Header>
+                        <Header id="teams">Teams</Header>
                         <section className="subject-zone">
                             <SubHeader>{this.state.subject_header[0]}</SubHeader>
                             <Content><p className="content">{this.state.subject_description[0]}</p></Content>
@@ -203,7 +213,7 @@ export default class Team extends Component {
                         </section>
                         <section className="other-subject-zone">
                             <OtherSubject>สาขาอื่นๆ</OtherSubject>
-                            <TotalSubject onClick={(i) => this.handleClick(i)} />
+                            <TotalSubject onClick={(i) => this.handleClick(i)} isActive={this.state.isActive} />
                         </section>
                     </Column> 
                     <Column>
