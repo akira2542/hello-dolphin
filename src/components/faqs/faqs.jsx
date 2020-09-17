@@ -5,7 +5,8 @@ import { Header } from '../core/text'
 const Container = styled.div`
 width: 100%;
 height: 100vh;
-background-color: #023058;
+// background-color: #023058;
+background: linear-gradient(45deg, #00103a 0%, #023058 100%);
 `
 
 const AccordianCon = styled.div`
