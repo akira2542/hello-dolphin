@@ -4,7 +4,7 @@ by #IT25 developer team SIT,KMUTT
 
 ## Requirements
 - node:12.18.3
-- yarn:latest
+- yarn:1.22.5
 
 ## Installing dependencies's project
 
@@ -16,6 +16,6 @@ by #IT25 developer team SIT,KMUTT
     yarn dev
 
 
-## building project
+## Building project
 
     yarn build
