@@ -6,7 +6,7 @@
     "postcss-modules": "^3.2.2"
   },
   "scripts": {
-    "dev": "parcel watch src/index.html -p 3000",
+    "dev": "parcel src/index.html -p 3000",
     "build": "parcel build src/index.html --public-url ./dist/"
   },
   "dependencies": {
