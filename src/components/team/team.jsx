@@ -35,13 +35,13 @@ const theme = {
 
 const wipWupAnimation = (shadow) => keyframes`
     0% {
-        box-shadow :  0px 0px 15px 1px ${shadow};
+        box-shadow :  0px 0px 17px 1px ${shadow};
     }
     50% {
         box-shadow :  0px 0px 26px 1px ${shadow};
     }
     100%{
-        box-shadow :  0px 0px 15px 1px ${shadow};
+        box-shadow :  0px 0px 17px 1px ${shadow};
     }
 
 `
@@ -66,73 +66,194 @@ const Button = styled.div`
         transition : .4s ease;
         box-shadow :  0px 0px 15px 1px ${props => props.shadow};
     }
-    animation : ${props => props.isActive? wipWupAnimation(props.shadow) : "none"} 4s ease-in-out infinite ;
+    animation : ${props => props.isActive? wipWupAnimation(props.shadow) : "none"} 3s ease-in-out infinite ;
+    @media (min-width : 360px){
+       display : none; 
+    }
+    @media (min-width : 1200px){
+        display : block;
+    }
 `
 const Container = styled.div`
-    // background-color :  #023058;  
+    background-color :  #023058;  
     background: linear-gradient(135deg, #00103a 0%, #023058 100%);
     height : 100vh;
     color : white;
     font-family : "Rye-Regular";
+    @media (min-width : 768px){
+        height : auto;
+    }
+    @media (min-width : 1200px){
+        height : 100vh;
+    }
 `
 const SubjectItemContainer = styled.div`
     display : flex;
     width : 100%;
     align-items : flex-start;
+    @media (min-width : 360px){
+        justify-content : center;
+    }
+    @media (min-width : 1200px){
+        justify-content : left;
+    }
 `
 const SubjectItem = styled.div`
-    margin : 10px 10px;
     display : flex;
     flex-direction : column;
-    justify-items : center;
     :hover div {
         color : black;
         background-color : ${props => props.color};
         transition : .4s ease;
         box-shadow :  0px 0px 15px 1px ${props => props.shadow};
     }
+    @media (min-width : 360px){
+        margin : 0 10px;
+        justify-items : center;
+    }
+    margin : 10px 10px;
 `
 const SubjectLogo = styled.div`
     background-image : url(${props => props.src});
     background-repeat : no-repeat;
     background-size : cover; 
     background-position : center;
-    width : 91px;
-    height : 91px;
     margin : 0 auto;
     border-radius : 50%;
     cursor : pointer;
     box-shadow :  0px 0px 15px 1px ${props => props.isActive ? props.shadow : "none"};
-    animation : ${props => props.isActive? wipWupAnimation(props.shadow) : "none"} 4s ease-in-out infinite ;
+    animation : ${props => props.isActive? wipWupAnimation(props.shadow) : "none"} 3s ease-in-out infinite;
+
+    @media (min-width : 360px){
+        width : 13vw;
+        height : 13vw;
+    }
+    @media (min-width : 768px){
+        width : 10vw;
+        height : 10vw;
+    }
+    @media (min-width : 1024px){
+        width : 8vw;
+        height : 8vw;
+    }
+    @media (min-width : 1200px){
+        width : 91px;
+        height : 91px;
+    }
 `
 const OtherSubject = styled.h4`
     font-size: 32px;
     font-family : "Itim-Regular";
+    display : block;
+    @media (max-width : 1200px){
+        display : none;
+    }
 `
 const Header = styled.h1`
     font-size : 120px;
     color : white;
+    @media (min-width : 360px){
+        font-size : 36px;
+        margin-top : 30px;
+        text-align : center;
+    }
+    @media (min-width : 600px){
+        font-size : 50px;
+    }
+    @media (min-width : 768px){
+        font-size : 96px;
+    }
+    @media (min-width : 1200px){
+        text-align : left;
+        font-size : 120px;
+    }
 ` 
 const SubHeader = styled.h2`
-    font-size : 60px;
+    font-size : 72px;
     color : white;
-`
-const Wrapper = styled.div`
-    max-width : 90vw;
-    margin : 0 auto;
-    display : flex;
+    @media (min-width : 360px){
+        font-size : 24px;
+        text-align : center;
+    }
+    @media (min-width : 768px){
+        font-size : 48px;
+    }
+    @media (min-width : 1200px){
+        text-align : left;
+        font-size : 72px;
+    }
 `
 const Content = styled.div`
     font-size : 20px;
     font-family : "Itim-Regular";
     text-indent : 50px;
+    text-align : justify;
+    @media (min-width : 360px){
+        font-size : 9px;
+    }
+    @media (min-width : 600px){
+        font-size : 15px;
+    }
+    @media (min-width : 768px){
+        font-size : 24px;
+    }
+`
+const Wrapper = styled.div`
+    max-width : 90vw;
+    margin : 0 auto;
+    display : flex;
+    @media (min-width : 360px){
+        flex-direction : column;
+    }
+    @media (min-width : 1200px){
+        flex-direction : row;
+    }
 `
 const Column = styled.div`
     display : flex;
     flex-direction : column;
     width : 50%;
+    margin : 10px 0;
+    justify-content : center;
+    @media (min-width : 360px){
+        width : 100%;
+        order : ${props => props.order};
+    }
+    @media (min-width : 1200px){
+        flex-direction : column;
+        order : 0;
+    }
 `
-
+const SubjectWrapper = styled.div`
+    @media (max-width : 1200px){
+        margin : 20px 0px;
+        order : ${props => props.order};
+    }
+`
+const RegisterButton = styled(Button)`
+    display : block;
+    margin-top : 30px;
+    @media (max-width : 1200px){
+        font-size : 16px;
+        width : 25vw;
+    }
+`
+const Img = styled.img`
+    width : 100%;
+    margin : 0 auto;
+    @media (min-width : 360px){
+        width : 55%;
+    }
+    @media (min-width : 768px){
+        width : 45%;
+    }
+    @media (min-width : 800px){
+        width : 35%;
+    }
+    @media (min-width : 1200px){
+        width : 100%;
+    }
+`
 function Subject(props){
     return (
         <SubjectItem color={props.color} shadow={props.shadow} className="active" onClick={props.onClick}>
@@ -189,6 +310,7 @@ export default class Team extends Component {
                 prevIndex : index
             })
         }
+        window.addEventListener()
     }
 
     handleClick = (index) => {
@@ -201,24 +323,24 @@ export default class Team extends Component {
             <Fragment>
                 <Container>
                     <Wrapper>
-                    <Column>
+                    <Column order="2">
                         <Header id="teams">Teams</Header>
-                        <section className="subject-zone">
+                        <SubjectWrapper order="2">
                             <SubHeader>{this.state.subject_header[0]}</SubHeader>
                             <Content><p className="content">{this.state.subject_description[0]}</p></Content>
-                            <Button 
+                            <RegisterButton 
                                 color="#B9E6E9" 
                                 shadow="#31CBED"
                                 width="200px" 
-                                fontSize="18px" > Register </Button>
-                        </section>
-                        <section className="other-subject-zone">
+                                fontSize="18px" > Register </RegisterButton>
+                        </SubjectWrapper>
+                        <SubjectWrapper order="1">
                             <OtherSubject>สาขาอื่นๆ</OtherSubject>
                             <TotalSubject onClick={(i) => this.handleClick(i)} isActive={this.state.isActive} />
-                        </section>
+                        </SubjectWrapper>
                     </Column> 
-                    <Column>
-                        <img src={dolphin} style={{width:"100%",marginTop:"50px"}} alt="Dolphin"/>
+                    <Column order="1">
+                        <Img src={dolphin} />
                     </Column>
                     </Wrapper>
                 </Container>
