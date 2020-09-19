@@ -15,39 +15,43 @@ position: relative;
 `
 const CloudLeft = styled.img`
 position: absolute;
-right: 55em;
-bottom: 0em;
+right: 45%;
+bottom: 56%;
 /* margin-right: 150%; */
 width: 55%;
-@media (min-width: 1024px){
-    left: 0em;    
-    margin-top: 10em;
-}
+
 `
 const CloudRight = styled.img`
 position: absolute;
-left:50em; 
-width: 65%;
-bottom: 10em;
+left: 60%; 
+width: 50%;
+bottom: 25%;
 `
 const AboutBorder = styled.div`
-margin-top: 16em;
-margin-bottom: 20em;
+margin-top: 17%;
+margin-bottom: 60%;
 
 padding: 20px;
 border-radius: 30px;
 border: 1px ;
 background-color: rgba(252, 204, 171, 0.52);
 
-@media (min-width: 1024px){
-    width: 50em;
-    height: 30em;
-    margin-left: 4em;
-}
+
 `
 const ClayTop = styled.img`
-width: 90%;
-margin-top: -4.5em;
+width: 100%;
+@media (min-width: 375px){
+    margin-top: -4.2%;
+}
+@media (min-width: 411px) {
+    margin-top: -4.1%;
+
+    }
+
+/* @media (min-width: 411px){
+    margin-top: -7%;
+} */
+
 
 `
 
@@ -71,7 +75,7 @@ export default class About extends Component {
                         <div className="col-4">
                         </div>
                     </div>     
-                  {/* <CloudLeft src={cloudLeft} /> */}
+                  <CloudLeft src={cloudLeft} />
                 
                     <div className="row">
                         <div className="col-auto">

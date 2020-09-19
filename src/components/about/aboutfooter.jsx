@@ -6,6 +6,7 @@ import sunshadow from '../../assets/images/about/sun_shadow.png'
 import boat from '../../assets/images/about/boat.png'
 import waterblue from '../../assets/images/about/water_blue.png'
 import waterdark from '../../assets/images/about/water_darkblue.png'
+
 import waterpurple from '../../assets/images/about/water_purple.png'
 import waterpink from '../../assets/images/about/water_pink.png'
 
@@ -66,17 +67,18 @@ width: 20%;
 bottom: 12%;
 
  @media (min-width: 375px){
-    bottom: 3%;
+    bottom: 5%;
 }
 @media (min-width: 441px) {
-        bottom: 4%;
+        bottom: 5%;
     }
 @media (min-width: 554px){
     bottom: 5%;
 }
-@media (min-width: 554px){
-    bottom: 6%;
+@media (min-width: 654px){
+    bottom: 7%;
 }
+
 @media (min-width: 884px){
     bottom: 7%;
 }
@@ -119,17 +121,22 @@ transform: translateX(-50%);
 width: 40%;
 bottom: 6.5%;
 @media (min-width: 375px){
-    bottom: 1.5%;
-}
-@media (min-width: 441px) {
-        bottom: 2%;
-    }
-    @media (min-width: 738px){
     bottom: 2.5%;
 }
+@media (min-width: 441px) {
+        bottom: 3%;
+    }
+    
 @media (min-width: 554px){
     bottom: 3%;
 }
+@media (min-width: 654px){
+    bottom: 3.5%;
+}
+@media (min-width: 738px){
+    bottom: 3.6%;
+}
+
 @media (min-width: 884px){
     bottom: 3.5%;
 }
@@ -139,7 +146,7 @@ bottom: 6.5%;
 @media (min-width: 1024px){
     bottom: 6.5%;
 }
-@media (min-width: 1024px){
+@media (min-width: 1440px){
     bottom: 7%;
 }
 /* 
