@@ -156,6 +156,7 @@ const Header = styled.h1`
         font-size : 36px;
         margin-top : 30px;
         text-align : center;
+        display : none;
     }
     @media (min-width : 600px){
         font-size : 50px;
@@ -166,6 +167,7 @@ const Header = styled.h1`
     @media (min-width : 1200px){
         text-align : left;
         font-size : 120px;
+        display : block;
     }
 ` 
 const SubHeader = styled.h2`
@@ -180,7 +182,7 @@ const SubHeader = styled.h2`
     }
     @media (min-width : 1200px){
         text-align : left;
-        font-size : 72px;
+        font-size : 65px;
     }
 `
 const Content = styled.div`
@@ -188,6 +190,7 @@ const Content = styled.div`
     font-family : "Itim-Regular";
     text-indent : 50px;
     text-align : justify;
+    height : 100px;
     @media (min-width : 360px){
         font-size : 9px;
     }
@@ -239,7 +242,6 @@ const RegisterButton = styled(Button)`
     }
 `
 const Img = styled.img`
-    width : 100%;
     margin : 0 auto;
     @media (min-width : 360px){
         width : 55%;
@@ -252,6 +254,12 @@ const Img = styled.img`
     }
     @media (min-width : 1200px){
         width : 100%;
+    }
+`
+const HeaderMobile = styled(Header)`
+    display : block;
+    @media (min-width : 1200px){
+        display : none;
     }
 `
 function Subject(props){
@@ -310,7 +318,6 @@ export default class Team extends Component {
                 prevIndex : index
             })
         }
-        window.addEventListener()
     }
 
     handleClick = (index) => {
@@ -323,6 +330,7 @@ export default class Team extends Component {
             <Fragment>
                 <Container>
                     <Wrapper>
+                        <HeaderMobile id="teams">Teams</HeaderMobile>
                     <Column order="2">
                         <Header id="teams">Teams</Header>
                         <SubjectWrapper order="2">
