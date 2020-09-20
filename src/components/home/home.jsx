@@ -64,6 +64,8 @@ const Fanpage = styled.a`
     vertical-align: middle;
     margin-left: 1%;
     color: white;
+    position: relative;
+    z-index: 1;
 
     :hover {
         text-decoration: none;

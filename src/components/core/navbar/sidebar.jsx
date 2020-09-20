@@ -63,7 +63,7 @@ const SideNav = styled.div`
   height: 100%; 
   width: 0; 
   position: fixed; 
-  z-index: 2; 
+  z-index: 999; 
   top: 0; 
   left: 0;
   background-color: #B0CCE5; 
@@ -86,7 +86,7 @@ const Item = styled.a`
 const Overlay = styled.div`
     width: 0;
     height: 100%;
-    z-index: 1;
+    z-index: 998;
     top: 0; 
     left: 0;
     position: fixed;
