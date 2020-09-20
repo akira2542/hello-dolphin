@@ -76,7 +76,7 @@ const Button = styled.div`
 `
 const Container = styled.div`
     background-color :  #023058;  
-    background: linear-gradient(135deg, #00103a 0%, #023058 100%);
+    /* background: linear-gradient(135deg, #00103a 0%, #023058 100%); */
     height : 100vh;
     color : white;
     font-family : "Rye-Regular";

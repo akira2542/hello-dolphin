@@ -14,7 +14,7 @@ const HomeContainer = styled.div`
     height: 100vh;
     font-family : 'Itim-Regular' ;
     background-color: #023058;
-    background: linear-gradient(45deg, #00103a 0%, #023058 100%);
+    /* background: linear-gradient(45deg, #00103a 0%, #023058 100%); */
 `
 
 const HomeContent = styled.div`

@@ -6,7 +6,7 @@ import sunshadow from '../../assets/images/about/sun_shadow.png'
 import boat from '../../assets/images/about/boat.png'
 import waterblue from '../../assets/images/about/water_blue.png'
 import waterdark from '../../assets/images/about/water_darkblue.png'
-
+import salite from './Mhoooonnnsaliteeee.scss'
 import waterpurple from '../../assets/images/about/water_purple.png'
 import waterpink from '../../assets/images/about/water_pink.png'
 
@@ -192,23 +192,31 @@ width: 55%;
     bottom: -0.5%;
 }
 `
-
+const AiKwaiBoonTumMaiMeFragMentLeawYungJaMeDivEek = styled.div`
+    overflow : hidden;
+`
 
 // if state are needed change to class component as you se fit - ruangrit 
 
 export default class aboutfooter extends Component {
+    componentDidMount() {
+        console.log(salite);
+    }
+    
     render() {
         return (
             <Fragment>
+                <AiKwaiBoonTumMaiMeFragMentLeawYungJaMeDivEek>
                 <div>
                     <Sunrise src={sunrise} />
                     <Waterblue src={waterblue} />
                     <Sunshadow src={sunshadow} />
-                    <Waterpink src={waterpink} />
-                    <Waterpurple src={waterpurple} />
-                    <Boat src={boat} />
-                    <Waterdark src={waterdark} />
+                    <Waterpink className = {salite.salitepailoeyframekaiserX} src={waterpink} />
+                    <Waterpurple className = {salite.salitepailoeyframekaiserX2} src={waterpurple} />
+                    <Boat className = {salite.rotateandspinlikeyouheadgonnablowingup} src={boat} />
+                    <Waterdark className = {salite.salitepailoeyframekaiserX3} src={waterdark} />
                 </div>
+                </AiKwaiBoonTumMaiMeFragMentLeawYungJaMeDivEek>
             </Fragment>
         )
     }
