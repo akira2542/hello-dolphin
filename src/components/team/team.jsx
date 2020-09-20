@@ -295,15 +295,18 @@ export default class Team extends Component {
             `2`
         ],
         prevIndex : 0,
-        isActive : [true,false,false,false,false]
+        isActive : [true,false,false,false,false],
+        headerIndex: 0,
+        contentIndex: 0
     }
 
     changeTopic(index){
-        const pElement = document.getElementsByClassName('content');
-        const h2Element = document.getElementsByTagName('h2');
 
-        h2Element[0].innerText = this.state.subject_header[index];
-        pElement[0].innerText = this.state.subject_description[index];
+        this.setState({
+            headerIndex : index,
+            contentIndex : index
+        })
+
     }
 
     activeButton(index){
@@ -334,8 +337,8 @@ export default class Team extends Component {
                     <Column order="2">
                         <Header id="teams">Teams</Header>
                         <SubjectWrapper order="2">
-                            <SubHeader>{this.state.subject_header[0]}</SubHeader>
-                            <Content><p className="content">{this.state.subject_description[0]}</p></Content>
+                            <SubHeader>{this.state.subject_header[this.state.headerIndex]}</SubHeader>
+                            <Content><p className="content">{this.state.subject_description[this.state.contentIndex]}</p></Content>
                             <RegisterButton 
                                 color="#B9E6E9" 
                                 shadow="#31CBED"
