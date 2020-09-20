@@ -16,20 +16,34 @@ justify-content: center;
 margin-top: 50px;
 `
 const Accordian = styled.div`
-width: 1170px;
 font-family: 'Itim-Regular';
-font-size: 30px;    
+width: 80%;
+@media (min-width : 600px){
+    font-size: 18px;
+    }
+@media (min-width : 1080px){
+    font-size: 24px;
+    width: 900px;
+}
+@media (min-width : 1280px){
+    width: 1170px;
+    font-size: 30px;
+    }    
 `
 const AccordianHeading = styled.div`
 width: 100%;
-background-color: #C1D3E8;
+background-color: #A6D4FF;
 display: flex;
 padding: 20px 20px;
 cursor : pointer;
 transition: 0.3s ease-in-out;
-
+border-radius: 3px; 
+border: 1px solid black;
     :hover {
-        background-color: #C1D3E8DD;
+        & .indicator {
+            border-top-color: white;
+            transform : translate(0,5px)
+        }
     }
 `
 const Indicator = styled.div`
@@ -41,14 +55,17 @@ const Indicator = styled.div`
   margin-left: auto;
   margin-right: 15px;
   align-self: center;
+  transition : 0.3s ease-in-out;
 ` 
 
 const AccordianContent = styled.div`
 width: 100%;
 max-height: 0;
 transition: 0.3s ease-in-out;
-background-color: darkgray;
+background-color: #DDEFFF;
 overflow: hidden;
+border-radius: 3px;
+border: 1px solid black;
 margin-bottom: 12px;
  & p{
     margin: 0.5em 1em 0.5em 1em;
@@ -103,15 +120,16 @@ export default class Faqs extends Component {
                 <Header color="white " textAlign="center" headerText="FAQS" />
                 <AccordianCon>
                     <Accordian>
-                        <AccordianHeading onClick={() => this.toggleContent(1)}><div>ใครสมัครได้บ้าง สมัครแล้วเข้าได้ทุกคนไหม?</div><Indicator/></AccordianHeading>
-                        <AccordianContent id="content-1"><p>Content</p></AccordianContent>
-                        <AccordianHeading onClick={() => this.toggleContent(2)}><div>ใครสมัครได้บ้าง สมัครแล้วเข้าได้ทุกคนไหม?</div><Indicator/></AccordianHeading>
+                        <AccordianHeading onClick={() => this.toggleContent(1)}><div>ใครสมัครได้บ้าง สมัครแล้วเข้าได้ทุกคนไหม ?</div><Indicator className="indicator" /></AccordianHeading>
+                        <AccordianContent id="content-1"><p>น้อง ๆ จากชั้นปีที่ 1 จากทั้งสาขา IT, CS และ DSI สามารถสมัครได้ ทั้งนี้ เนื่องจากในแต่ละสาขานั้นสามารถรับน้อง ๆ ที่จะมาเข้าร่วมโครงการได้อย่างจำกัด ดังนั้นจึงจำเป็นต้องมีการคัดเลือกน้อง ๆ ซึ่งจะคัดเลือกจากการตอบคำถามของน้อง ๆ ตอนรับสมัคร
+</p></AccordianContent>
+                        <AccordianHeading onClick={() => this.toggleContent(2)}><div>โครงการนี้จัดที่ไหน จะรบกวนเวลาเรียนไหม ?</div><Indicator className="indicator"/></AccordianHeading>
                         <AccordianContent id="content-2"><p>Content</p></AccordianContent>
-                        <AccordianHeading onClick={() => this.toggleContent(3)}><div>ใครสมัครได้บ้าง สมัครแล้วเข้าได้ทุกคนไหม?</div><Indicator/></AccordianHeading>
+                        <AccordianHeading onClick={() => this.toggleContent(3)}><div>การเรียนการสอนเป็นอย่างไร ?</div><Indicator className="indicator"/></AccordianHeading>
                         <AccordianContent id="content-3"><p>Content</p></AccordianContent>
-                        <AccordianHeading onClick={() => this.toggleContent(4)}><div>ใครสมัครได้บ้าง สมัครแล้วเข้าได้ทุกคนไหม?</div><Indicator/></AccordianHeading>
+                        <AccordianHeading onClick={() => this.toggleContent(4)}><div>จำเป็นต้องมีความรู้มาก่อนไหม ?</div><Indicator className="indicator"/></AccordianHeading>
                         <AccordianContent id="content-4"><p>Content</p></AccordianContent>
-                        <AccordianHeading onClick={() => this.toggleContent(5)}><div>ใครสมัครได้บ้าง สมัครแล้วเข้าได้ทุกคนไหม?</div><Indicator/></AccordianHeading>
+                        <AccordianHeading onClick={() => this.toggleContent(5)}><div>ใมีค่าใช้จ่ายในการสมัครไหม ?</div><Indicator className="indicator"/></AccordianHeading>
                         <AccordianContent id="content-5"><p>Content</p></AccordianContent>
                     </Accordian>
                 </AccordianCon>
