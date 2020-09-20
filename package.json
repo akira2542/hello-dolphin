@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "parcel src/index.html -p 3000",
-    "build": "parcel build src/index.html --public-url ./dist/"
+    "build": "parcel build src/index.html"
   },
   "dependencies": {
     "bootstrap": "^4.5.2",
