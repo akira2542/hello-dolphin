@@ -80,7 +80,7 @@ const Container = styled.div`
     height : 100vh;
     color : white;
     font-family : "Rye-Regular";
-    @media (min-width : 768px){
+    @media (min-width : 600px){
         height : auto;
     }
     @media (min-width : 1200px){
@@ -93,6 +93,9 @@ const SubjectItemContainer = styled.div`
     align-items : flex-start;
     @media (min-width : 360px){
         justify-content : center;
+    }
+    @media (min-width : 1200px) and (max-width : 1320px){
+        width : 110%;
     }
     @media (min-width : 1200px){
         justify-content : left;
@@ -137,8 +140,8 @@ const SubjectLogo = styled.div`
         height : 8vw;
     }
     @media (min-width : 1200px){
-        width : 91px;
-        height : 91px;
+        width : 89px;
+        height : 89px;
     }
 `
 const OtherSubject = styled.h4`
@@ -150,11 +153,9 @@ const OtherSubject = styled.h4`
     }
 `
 const Header = styled.h1`
-    font-size : 120px;
     color : white;
     @media (min-width : 360px){
-        font-size : 36px;
-        margin-top : 30px;
+        font-size : 40px;
         text-align : center;
         display : none;
     }
@@ -166,15 +167,14 @@ const Header = styled.h1`
     }
     @media (min-width : 1200px){
         text-align : left;
-        font-size : 120px;
+        font-size : 110px;
         display : block;
     }
 ` 
 const SubHeader = styled.h2`
-    font-size : 72px;
     color : white;
     @media (min-width : 360px){
-        font-size : 24px;
+        font-size : 28px;
         text-align : center;
     }
     @media (min-width : 768px){
@@ -182,7 +182,7 @@ const SubHeader = styled.h2`
     }
     @media (min-width : 1200px){
         text-align : left;
-        font-size : 65px;
+        font-size : 60px;
     }
 `
 const Content = styled.div`
@@ -190,15 +190,20 @@ const Content = styled.div`
     font-family : "Itim-Regular";
     text-indent : 50px;
     text-align : justify;
-    height : 100px;
     @media (min-width : 360px){
-        font-size : 9px;
+        font-size : 16px;
+        height : 85px;
     }
     @media (min-width : 600px){
-        font-size : 15px;
+        font-size : 18px;
+        height : 80px;
     }
     @media (min-width : 768px){
-        font-size : 24px;
+        font-size : 22px;
+        height : 100px;
+    }
+    @media (min-width : 1200px){
+        width : 95%;
     }
 `
 const Wrapper = styled.div`
@@ -228,7 +233,7 @@ const Column = styled.div`
     }
 `
 const SubjectWrapper = styled.div`
-    @media (max-width : 1200px){
+    @media (max-width : 1199px){
         margin : 20px 0px;
         order : ${props => props.order};
     }
