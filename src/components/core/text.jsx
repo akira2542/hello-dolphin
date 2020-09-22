@@ -35,18 +35,22 @@ const ContentText = styled.p`
     text-align: ${props => props.textAlign};
     text-indent: ${props => props.textIndent};
     padding: ${props => props.padding};
-    line-height: 18px;
+    line-height: 50px;
+    @media (min-width: 411px){
+font-size: 9px;
+line-height: 18px;
 
+}
     @media (min-width: 768px) {
-        font-size: 16px;
-        line-height: 30px;
+        font-size: 18px;
+        line-height: 36px;
         text-align: ${props => props.textAlignResponsive};
         text-indent: ${props => props.textIndentIpad};
     }
 
     @media (min-width: 1024px) {
-        font-size: 18px;
-        line-height: 35px;
+        font-size: 24px;
+        line-height: 36px;
         text-align: ${props => props.textAlignDeskTop};
         text-indent: ${props => props.textIndentDesktop};
     }

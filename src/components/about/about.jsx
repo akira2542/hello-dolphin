@@ -6,6 +6,8 @@ import cloudLeft from '../../assets/images/about/cloud_left.png'
 import cloudRight from '../../assets/images/about/cloud_right.png';
 import clay from '../../assets/images/about/clay.png';
 import Footer from './aboutfooter'
+import whale from '../../assets/images/about/whale.png'
+import turtle from '../../assets/images/about/turtle.png'
 // if state are needed change to class component as you se fit - ruangrit 
 const AboutContainer = styled.div`
 background-color:#FF8782;
@@ -16,16 +18,36 @@ position: relative;
 const CloudLeft = styled.img`
 position: absolute;
 right: 45%;
-bottom: 56%;
-/* margin-right: 150%; */
+bottom: 54%;
 width: 55%;
+@media (min-width: 411px){
+bottom: 45%;
 
+}
+@media (min-width: 768px){
+    bottom: 35%;
+
+}
+/* -webkit-transform: scaleX(-1);
+  transform: scaleX(-1); */
 `
 const CloudRight = styled.img`
 position: absolute;
 left: 60%; 
-width: 50%;
-bottom: 25%;
+width: 65%;
+bottom: 28%;
+@media (min-width: 411px){
+bottom: 20%;
+
+}
+@media (min-width: 768px){
+    bottom: 15%;
+
+}
+@media (min-width: 1366px){
+    left: 60%; 
+
+}
 `
 const AboutBorder = styled.div`
 margin-top: 17%;
@@ -35,8 +57,35 @@ padding: 20px;
 border-radius: 30px;
 border: 1px ;
 background-color: rgba(252, 204, 171, 0.52);
+@media (min-width: 411px){
+margin-bottom: 0%;
+height: 85%;
+padding-top: 10%;
+}
+@media (min-width: 768px){
+margin-bottom: 0%;
+margin-top: 10%;
 
+height: 80%;
+padding: 5%;
+width: 100%;
+}
+@media (min-width: 1024px){
+margin-bottom: 15%;
+margin-top: 0%;
 
+height: 75%;
+padding: 5%;
+width: 100%;
+}
+@media (min-width: 1280px){
+margin-bottom: 15%;
+margin-top: 0%;
+
+height: 75%;
+padding: 5%;
+width: 100%;
+}
 `
 const ClayTop = styled.img`
 width: 100%;
@@ -44,8 +93,6 @@ width: 100%;
     margin-top: -4.2%;
 }
 @media (min-width: 411px) {
-    margin-top: -4.1%;
-
     }
 
 /* @media (min-width: 411px){
@@ -62,20 +109,18 @@ export default class About extends Component {
             <Fragment>
                 <AboutContainer>
                
- <ClayTop src={clay} />
+                 <ClayTop src={clay} />
                     <div className="container">
                         
-                    <div className="row">
+                
                         
-                        <div className="col-4">
-                        </div>
-                        <div className="col-4">
-                            <Header color="black" headerText="About" />
-                        </div>
-                        <div className="col-4">
-                        </div>
-                    </div>     
+                       
+                            <Header color="black" textAlign="center" headerText="About" />
+                        
+                       
+             
                   <CloudLeft src={cloudLeft} />
+                  <CloudRight src={cloudRight} />
                 
                     <div className="row">
                         <div className="col-auto">
@@ -103,7 +148,6 @@ export default class About extends Component {
                     กันมาซึ่งเปรียบเสมือนกับนักศึกษาที่เข้าร่วมโครงการ ที่เดินทางตามหาความฝันและเส้นทางเดินของตนเองนั่นเอง"
                             />
                             </AboutBorder>
-                            {/* <CloudRight src={cloudRight}/> */}
                         </div>
                     </div>
                 </div>

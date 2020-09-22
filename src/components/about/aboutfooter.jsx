@@ -16,11 +16,14 @@ width: 100%;
 bottom: 4em;
 right: 0em;
 @media (min-width: 375px){
-    bottom: 0%;
+    bottom: 0em;
+}
+@media (min-width: 768px){
+    bottom: 0em;
 }
 @media (min-width: 1024px){
     
-    bottom: 3em;
+    bottom: 1em;
 }
 `
 const Waterdark = styled.img`
@@ -67,13 +70,13 @@ width: 20%;
 bottom: 12%;
 
  @media (min-width: 375px){
-    bottom: 5%;
+    bottom: 6%;
 }
 @media (min-width: 441px) {
-        bottom: 5%;
+        bottom: 6%;
     }
 @media (min-width: 554px){
-    bottom: 5%;
+    bottom: 6%;
 }
 @media (min-width: 654px){
     bottom: 7%;
@@ -89,30 +92,6 @@ bottom: 12%;
     bottom: 11%;
 }
 
-
-/* @media (min-width: 1024px){
-    left: 33em;
-    bottom: 13em;
-} */
-/* @media (min-width: 1040px){
-    left: 27em;
-    bottom: 10em;
-}
-
-@media (min-width: 1080px){
-    left: 28em;
-    bottom: 11em;
-}
-@media (min-width: 1120px){
-    left: 29em;
-}
-@media (min-width: 1180px){
-    left: 30em;
-}
-@media (min-width: 1220px){
-    left: 32em;
-    
-} */
 `
 const Sunshadow = styled.img`
 position: absolute;
@@ -149,32 +128,6 @@ bottom: 6.5%;
 @media (min-width: 1440px){
     bottom: 7%;
 }
-/* 
-@media (min-width: 1040px){
-    left: 21.5em;
-    bottom: 7.5em;
-}
-@media (min-width: 1080px){
-    bottom: 8em;
-}
-@media (min-width: 1120px){
-    left: 22.5em;
-    bottom: 8.5em;
-    
-
-}
-@media (min-width: 1180px){
-    left: 23.5em;
-    bottom: 9em;
-
-    
-
-}
-@media (min-width: 1280px){
-    left: 26.5em;
-    bottom: 8.2em;
-    height: 12%;    
-} */
 
 
 
