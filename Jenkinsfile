@@ -59,6 +59,12 @@ pipeline {
         sh' sudo docker push gunfluenza/hellocockatiel:build-${BUILD_NUMBER} '
       }
     }
+     
+    stage('Delete old Hellodolphin WebPR on Helm') {
+      steps {
+        sh "helm uninstall webpr${BRANCH_NAME} -n ${BRANCH_NAME}"
+      } // End steps
+    } // End stage
     
     stage('Deploy HelloCockatiel WebPR on Helm') {
       steps {
