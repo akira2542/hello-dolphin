@@ -63,7 +63,13 @@ pipeline {
       }
     }
     
-    stage('Deploy Hellodolphin WebPR on Helm') {
+    stage('Delete old Hellodolphin WebPR on Helm') {
+      steps {
+        sh "helm uninstall webpr${BRANCH_NAME} -n ${BRANCH_NAME}"
+      } // End steps
+    } // End stage
+    
+    stage('Deploy new Hellodolphin WebPR on Helm') {
       steps {
               sh "helm upgrade -i -f Hello-dolphinHelm/Hello-dolphin-${BRANCH_NAME}/values.yaml --wait --namespace=${BRANCH_NAME} webpr${BRANCH_NAME} Hello-dolphinHelm/Hello-dolphin-${BRANCH_NAME}"
       } // End steps
