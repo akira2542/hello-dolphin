@@ -99,7 +99,7 @@ export default class NavBar extends Component {
                                 <Item>About</Item>
                             </Link>
                             <Link href="#">
-                                <Item>From</Item>
+                                <Item>Teams</Item>
                             </Link>
                             <Link href="#">
                                 <Item>FAQs</Item> 
