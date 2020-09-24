@@ -123,7 +123,7 @@ export default function SideBar() {
                 <Close onClick={collasp} />
                 <Item href="#">Home</Item>
                 <Item href="#">About</Item>
-                <Item href="#">Team</Item>
+                <Item href="#">Teams</Item>
                 <Item href="#">FAQs</Item>
             </SideNav>
             <Overlay id="side-overlay" onClick={collasp} />
