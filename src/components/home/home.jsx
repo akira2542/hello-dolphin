@@ -14,6 +14,7 @@ const HomeContainer = styled.div`
     height: 100vh;
     font-family : 'Itim-Regular' ;
     background-color: #023058;
+    width: 100%;
     /* background: linear-gradient(45deg, #00103a 0%, #023058 100%); */
 `
 
@@ -31,7 +32,7 @@ const Logo = styled.img`
         width: 80%;
     }
 
-    @media (min-width: 1366px) {
+    @media (min-width: 1280px) {
         width: 60%;
     }
 
@@ -90,6 +91,10 @@ const Dolphin = styled.img`
         width: 35%;
         right: 3%;
         bottom: 1%;
+    }
+
+    @media (min-width: 1280px) {
+        width: 25%;
     }
 
     @media (min-width: 1366px) {

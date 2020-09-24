@@ -15,6 +15,10 @@ const CoralShadowLeft = styled.img`
     bottom: 0px;
     width: 70%;
 
+    @media (min-width: 1280px) {
+        width: 43%;
+    }
+
     @media (min-width: 1366px) {
         width: 54%;
     }
@@ -49,6 +53,12 @@ const CoralOrange = styled.img`
         left: 18%;
     }
 
+    @media (min-width: 1280px) {
+        width: 13%;
+        bottom: 15%;
+        left: 15%;
+    }
+
     @media (min-width: 1366px) {
         width: 10%;
         bottom: 20%;
@@ -73,12 +83,12 @@ const ClayDarkBlue = styled(CoralShadowLeft)`
     bottom: -2%;
     height: 12%;
 
-    @media (min-width: 1366px) {
-        width: 30%;
+    @media (min-width: 1280px) {
+        width: 25%;
         height: auto;
     }
 
-    @media (min-width: 1440px) {
+    @media (min-width: 1366px) {
         width: 30%;
         height: auto;
     }
@@ -90,13 +100,15 @@ const CoralGreen = styled.img`
     left: 5%;
     width: 8%;
 
-    @media (min-width: 1366px) {
+    @media (min-width: 1280px) {
         width: 5%;
+    }
+
+    @media (min-width: 1366px) {
         bottom: 5%;
     }
 
     @media (min-width: 1440px) {
-        width: 5%;
         bottom: 8%;
     }
 `
@@ -130,6 +142,11 @@ const FishBlue = styled.img`
     bottom: 20%;
     left: 5%;
     width: 10%;
+
+    @media (min-width: 1280px) {
+        width: 6%;
+        bottom: 30%;
+    }
 
     @media (min-width: 1366px) {
         width: 8%;
