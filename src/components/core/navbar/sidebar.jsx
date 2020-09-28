@@ -1,6 +1,7 @@
 
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import ReactDOM from 'react-dom'
 
 
 const Open = styled.div`
@@ -96,12 +97,12 @@ const Overlay = styled.div`
 `
 
 
-export default function SideBar() {
+export default function SideBar(props) {
 
     const expand = () => {
         let sidebar = document.getElementById("side-expand")
         let overlay = document.getElementById("side-overlay")
-        sidebar.style.width = "250px"
+        sidebar.style.width = "45vw"
         overlay.style.width = "100%"
         overlay.style.backgroundColor = "rgb(0,0,0,0.4)"
     }
@@ -116,15 +117,21 @@ export default function SideBar() {
           }, 500);
     }
 
+    const scrollToNode = (ref,yOffset) => {
+        let node = ReactDOM.findDOMNode(ref)
+        let y = node.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+    }
+
     return (
         <Fragment>
             <Open onClick={expand}><span></span></Open>
             <SideNav id="side-expand">
                 <Close onClick={collasp} />
-                <Item href="#">Home</Item>
-                <Item href="#">About</Item>
-                <Item href="#">Teams</Item>
-                <Item href="#">FAQs</Item>
+                <Item onClick={()=>scrollToNode(props.innerRefs.home.current,0)}>Home</Item>
+                <Item onClick={()=>scrollToNode(props.innerRefs.about.current,100)}>About</Item>
+                <Item onClick={()=>scrollToNode(props.innerRefs.team.current,-50)}>Teams</Item>
+                <Item onClick={()=>scrollToNode(props.innerRefs.faqs.current,-80)}>FAQs</Item>
             </SideNav>
             <Overlay id="side-overlay" onClick={collasp} />
         </Fragment>
