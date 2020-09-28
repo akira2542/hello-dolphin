@@ -13,6 +13,7 @@ const AboutContainer = styled.div`
 background-color:#FF8782;
 padding-bottom: 13.5em;
 position: relative;
+overflow : hidden;
 
 `
 const CloudLeft = styled.img`
