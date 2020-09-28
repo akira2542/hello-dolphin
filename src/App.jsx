@@ -36,18 +36,26 @@ const Globalstyle = createGlobalStyle`
 `
 
 export default class App extends React.Component {
+    //create ref for navgation bar
+    navRefs = {
+        home : React.createRef(),
+        about : React.createRef(),
+        team : React.createRef(),
+        faqs : React.createRef()
+    }
+         
     render() {
         return (
             <React.Fragment>
                 <Globalstyle />
-                <Navbar/>
-                <SideBar/>
-                <Home/>
-                <About/>
-                <Team/>
-                <Faqs/>
+                <Home ref={this.navRefs.home}/>
+                <About ref={this.navRefs.about}/>
+                <Team ref={this.navRefs.team}/>
+                <Faqs ref={this.navRefs.faqs}/>
                 <Sponsor/>
                 <SponsorFooter/>
+                <Navbar innerRefs={this.navRefs}/>
+                <SideBar innerRefs={this.navRefs}/>
             </React.Fragment>
         )
     }

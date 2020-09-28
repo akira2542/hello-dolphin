@@ -1,5 +1,6 @@
 
 import React, { Component, Fragment } from 'react'
+import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import logo from '../../../assets/images/navbar/logo.png'
 
@@ -30,6 +31,7 @@ const ItemCon = styled.div `
 const Link = styled.a `
     color: inherit;
     text-decoration: none;
+    cursor : pointer;
     
     :hover {
         color: inherit;
@@ -62,6 +64,7 @@ export default class NavBar extends Component {
 
     listenScrollEvent = () => {
         if (window.innerWidth < 1080) return
+        this.viewportHandler(this.props.innerRefs)
         let mainnav = document.getElementById('mainnav');
         if (window.scrollY > 100) {
             mainnav.style.height = '67px'
@@ -72,6 +75,31 @@ export default class NavBar extends Component {
             mainnav.style.backgroundColor = '#A0D6D800'
             mainnav.style.color = 'white'
         }
+    }
+
+    viewportHandler = (refs) => {
+        let element = null
+        for (const key in refs) {
+                element = ReactDOM.findDOMNode(refs[key].current)
+                if (this.isInViewport(element)) {
+                    console.log(`${key} : is in viewport`)
+                }
+        }
+    }
+
+    isInViewport = (element) => {
+        let bounding = element.getBoundingClientRect();
+        if (bounding.top >= -200 && bounding.left >= 0 && bounding.right <= window.innerWidth && bounding.bottom <= window.innerHeight+200) {
+        return true
+        } else {
+        return false
+        }
+    }
+
+    scrollToNode = (ref,yOffset) => {
+        let node = ReactDOM.findDOMNode(ref)
+        let y = node.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
     }
 
 	componentDidMount() {
@@ -92,16 +120,16 @@ export default class NavBar extends Component {
                             <LogoCon>
                                 <Logo src={logo}/>
                             </LogoCon>
-                            <Link href="#">
+                            <Link onClick={()=>this.scrollToNode(this.props.innerRefs.home.current,0)}>
                                 <Item>Home</Item>
                             </Link>
-                            <Link href="#">
+                            <Link onClick={()=>this.scrollToNode(this.props.innerRefs.about.current,200)}>
                                 <Item>About</Item>
                             </Link>
-                            <Link href="#">
+                            <Link onClick={()=>this.scrollToNode(this.props.innerRefs.team.current,-50)}>
                                 <Item>Teams</Item>
                             </Link>
-                            <Link href="#">
+                            <Link onClick={()=>this.scrollToNode(this.props.innerRefs.faqs.current,-80)}>
                                 <Item>FAQs</Item> 
                             </Link>
                             <FlexHolder/>

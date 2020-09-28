@@ -65,7 +65,6 @@ transition: 0.3s ease-in-out;
 background-color: #DDEFFF;
 overflow: hidden;
 border-radius: 3px;
-border: 1px solid black;
 margin-bottom: 12px;
  & p{
     margin: 0.5em 1em 0.5em 1em;
@@ -108,10 +107,14 @@ export default class Faqs extends Component {
 
     expandContent = (element) => {
         element.style.maxHeight = "200px"
+        element.style.border = "1px solid black"
     }
 
     collaspContent = (element) => {
-        element.style.maxHeight = "0"        
+        element.style.maxHeight = "0"
+        setTimeout(() => {
+            element.style.border = "0px"
+        }, 300);     
     }
 
     render() {
