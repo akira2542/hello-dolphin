@@ -8,7 +8,6 @@ import game_design_logo from '../../assets/images/team/game-design.png'
 import game_dev_logo from '../../assets/images/team/game-dev.png'
 import styled , {keyframes} from 'styled-components'
 
-
 const theme = {
     frontEnd : {
         primaryColor : "#B9E6E9",
@@ -114,7 +113,7 @@ const SubjectItem = styled.div`
         margin : 0 10px;
         justify-items : center;
     }
-    margin : 10px 10px;
+    margin : 10px 20px;
 `
 const SubjectLogo = styled.div`
     background-image : url(${props => props.src});
@@ -203,11 +202,11 @@ const Content = styled.div`
         height : 100px;
     }
     @media (min-width : 1200px){
-        width : 95%;
+        width : 90%;
     }
 `
 const Wrapper = styled.div`
-    max-width : 90vw;
+    max-width : 80vw;
     margin : 0 auto;
     display : flex;
     @media (min-width : 360px){
@@ -259,6 +258,7 @@ const Img = styled.img`
     }
     @media (min-width : 1200px){
         width : 100%;
+        margin : 50px 0 0 auto;
     }
 `
 const HeaderMobile = styled(Header)`
