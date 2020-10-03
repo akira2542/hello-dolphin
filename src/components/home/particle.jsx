@@ -14,7 +14,7 @@ const ParticleStyle = {
     position:'absolute'
 }
 const ParticleStyleMobile = {
-    position:'fixed'
+    position:'absolute'
 }
 
 export default class StarParticle extends Component {
@@ -81,12 +81,12 @@ export default class StarParticle extends Component {
         return this.state.innerHeight
     }
     render() {
-        if (this.getMove()){
+        if (this.getMove() && true){
         return (
             <ParticleContainer id="desktop-container">
             <Particles 
                 key="move" 
-                height={this.state.WindowHeight} 
+                height={this.state.innerHeight} 
                 style={ParticleStyle}
                 params={{
                     "particles": {
@@ -142,7 +142,7 @@ export default class StarParticle extends Component {
                 <ParticleContainer id="mobile-container">
                 <Particles 
                     key="don't move" 
-                    height={window.clientHeight} 
+                    height={this.state.innerHeight} 
                     style={ParticleStyleMobile}
                     params={{
                         "particles": {
