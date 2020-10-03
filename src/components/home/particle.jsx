@@ -4,7 +4,8 @@ import styled from 'styled-components';
 
 const ParticleContainer = styled.div`
     background: rgb(9,10,15);
-    background: linear-gradient(90deg, rgba(9,10,15,1) 0%, rgba(27,39,53,1) 50%, rgba(9,10,15,1) 100%);
+    background-color: #023058;
+    background: linear-gradient(45deg, #00103a 0%, #023058 100%);
     background-color: black;
     height: 100%;
     width: 100%;
@@ -101,9 +102,9 @@ export default class StarParticle extends Component {
                             "opacity": 0.02
                         },
                         "move": {
-                            "enable": false,
+                            "enable": true,
                             "direction": "right",
-                            "speed": 0
+                            "speed": 0.1
                         },
                         "size": {
                             "value": 2,

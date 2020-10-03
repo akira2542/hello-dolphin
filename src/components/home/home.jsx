@@ -6,6 +6,7 @@ import facebook from '../../assets/images/home/facebook.png'
 import Footer from './homefooter'
 import dolphin from '../../assets/images/home/dolphin.png'
 import Fallenstar from './fallenstar'
+import StarParticle from './particle'
 
 const HomeContainer = styled.div`
     overflow: hidden;
@@ -14,7 +15,7 @@ const HomeContainer = styled.div`
     min-height: 100vh;
     min-height: -webkit-fill-available;
     font-family : 'Itim-Regular' ;
-    background-color: #023058;
+    /* background-color: #023058; */
     background-size: 100vh;
     width: 100%;
     /* background: linear-gradient(45deg, #00103a 0%, #023058 100%); */
@@ -112,7 +113,7 @@ export default class home extends Component {
     render() {
         return (
 
-            <Fragment>
+            <StarParticle>
                 <HomeContainer>
                     <HomeContent>
                         <Fallenstar/>
@@ -126,7 +127,7 @@ export default class home extends Component {
                 </HomeContainer>
                 <Footer />
                 <Dolphin src={dolphin} />
-            </Fragment>
+            </StarParticle>
         )
     }
 }
