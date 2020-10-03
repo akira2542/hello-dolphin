@@ -79,6 +79,7 @@ const Item = styled.a`
     display: block;
     text-align: center;
     padding: 20px 20px; 
+    cursor : pointer;
     :hover {
         color: lightgray;
         text-decoration: none;
