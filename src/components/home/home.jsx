@@ -11,9 +11,11 @@ const HomeContainer = styled.div`
     overflow: hidden;
     display: table;
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     font-family : 'Itim-Regular' ;
     background-color: #023058;
+    background-size: 100vh;
     width: 100%;
     /* background: linear-gradient(45deg, #00103a 0%, #023058 100%); */
 `
