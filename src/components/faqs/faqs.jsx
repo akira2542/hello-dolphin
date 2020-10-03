@@ -11,8 +11,8 @@ background-color: #023058;
 
 const AccordianCon = styled.div`
 width: 100%;
-display: flex;
-justify-content: center;
+/* display: flex;
+justify-content: center; */
 margin-top: 50px;
 `
 const Accordian = styled.div`
@@ -56,7 +56,7 @@ const Indicator = styled.div`
   margin-right: 15px;
   align-self: center;
   transition : 0.3s ease-in-out;
-` 
+`
 
 const AccordianContent = styled.div`
 width: 100%;
@@ -74,12 +74,12 @@ margin-bottom: 12px;
 export default class Faqs extends Component {
 
     state = {
-        isOpen : [false,false,false,false,false],
+        isOpen: [false, false, false, false, false],
         prevIndex: -1
     }
 
     toggleContent = (index) => {
-        let arrindex = index-1
+        let arrindex = index - 1
         let id = `content-${index}`
         let content = document.getElementById(id)
         let isOpen = this.state.isOpen
@@ -88,7 +88,7 @@ export default class Faqs extends Component {
             this.collaspContent(content)
             isOpen[arrindex] = false;
             this.setState({
-                isOpen : isOpen
+                isOpen: isOpen
             })
             return;
         };
@@ -96,13 +96,13 @@ export default class Faqs extends Component {
         this.expandContent(content)
         isOpen[arrindex] = true;
         if (this.state.prevIndex > -1 && this.state.prevIndex !== arrindex) {
-            this.collaspContent(document.getElementById(`content-${this.state.prevIndex+1}`))
+            this.collaspContent(document.getElementById(`content-${this.state.prevIndex + 1}`))
             isOpen[this.state.prevIndex] = false
         }
         this.setState({
-            isOpen : isOpen,
-            prevIndex : arrindex
-                        })
+            isOpen: isOpen,
+            prevIndex: arrindex
+        })
     }
 
     expandContent = (element) => {
@@ -114,27 +114,41 @@ export default class Faqs extends Component {
         element.style.maxHeight = "0"
         setTimeout(() => {
             element.style.border = "0px"
-        }, 300);     
+        }, 300);
     }
 
     render() {
         return (
             <Container>
                 <Header color="white " textAlign="center" headerText="FAQS" />
-                <AccordianCon>
-                    <Accordian>
+                <AccordianCon className="container-fluid">
+                    <div className="row">
+                    <div className="col-1"></div>
+                    <Accordian className="col-10">
                         <AccordianHeading onClick={() => this.toggleContent(1)}><div>ใครสมัครได้บ้าง สมัครแล้วเข้าได้ทุกคนไหม ?</div><Indicator className="indicator" /></AccordianHeading>
-                        <AccordianContent id="content-1"><p>น้อง ๆ จากชั้นปีที่ 1 จากทั้งสาขา IT, CS และ DSI สามารถสมัครได้ ทั้งนี้ เนื่องจากในแต่ละสาขานั้นสามารถรับน้อง ๆ ที่จะมาเข้าร่วมโครงการได้อย่างจำกัด ดังนั้นจึงจำเป็นต้องมีการคัดเลือกน้อง ๆ ซึ่งจะคัดเลือกจากการตอบคำถามของน้อง ๆ ตอนรับสมัคร
-</p></AccordianContent>
-                        <AccordianHeading onClick={() => this.toggleContent(2)}><div>โครงการนี้จัดที่ไหน จะรบกวนเวลาเรียนไหม ?</div><Indicator className="indicator"/></AccordianHeading>
-                        <AccordianContent id="content-2"><p>Content</p></AccordianContent>
-                        <AccordianHeading onClick={() => this.toggleContent(3)}><div>การเรียนการสอนเป็นอย่างไร ?</div><Indicator className="indicator"/></AccordianHeading>
-                        <AccordianContent id="content-3"><p>Content</p></AccordianContent>
-                        <AccordianHeading onClick={() => this.toggleContent(4)}><div>จำเป็นต้องมีความรู้มาก่อนไหม ?</div><Indicator className="indicator"/></AccordianHeading>
-                        <AccordianContent id="content-4"><p>Content</p></AccordianContent>
-                        <AccordianHeading onClick={() => this.toggleContent(5)}><div>ใมีค่าใช้จ่ายในการสมัครไหม ?</div><Indicator className="indicator"/></AccordianHeading>
-                        <AccordianContent id="content-5"><p>Content</p></AccordianContent>
+                        <AccordianContent id="content-1">
+                            <p>น้อง ๆ จากชั้นปีที่ 1 จากทั้งสาขา IT, CS และ DSI สามารถสมัครได้ ทั้งนี้ เนื่องจากในแต่ละสาขานั้นสามารถรับน้อง ๆ ที่จะมาเข้าร่วมโครงการได้อย่างจำกัด ดังนั้นจึงจำเป็นต้องมีการคัดเลือกน้อง ๆ ซึ่งจะคัดเลือกจากการตอบคำถามของน้อง ๆ ตอนรับสมัคร</p>
+                        </AccordianContent>
+                        <AccordianHeading onClick={() => this.toggleContent(2)}><div>โครงการนี้จัดที่ไหน จะรบกวนเวลาเรียนไหม ?</div><Indicator className="indicator" /></AccordianHeading>
+                        <AccordianContent id="content-2">
+                            <p>โครงการนี้จะจัดขึ้นในทุกวันพุธและวันอาทิตย์ สำหรับในวันพุธจะเริ่มเรียนเวลา 18.00 - 20.00
+                        น. โดยสถานที่เรียนจะเป็นอาคารเรียนรวม 2 ชั้น 3 และตึกคณะเทคโนโลยีสารสนเทศ
+                        ซึ่งแต่ละสาขาจะใช้สถานที่ต่างกัน ส่วนวันอาทิตย์จะเริ่มเรียนเวลา 17.30 - 20.00 น. ผ่านทาง Microsoft Team</p>
+                        </AccordianContent>
+                        <AccordianHeading onClick={() => this.toggleContent(3)}><div>การเรียนการสอนเป็นอย่างไร ?</div><Indicator className="indicator" /></AccordianHeading>
+                        <AccordianContent id="content-3"><p>จะเป็นการเรียนภายในห้องเรียนในทุกวันพุธ และเรียนออนไลน์ในทุกวันอาทิตย์
+                        นอกจากนี้ในการเรียนการสอนทุกครั้งจะมีการบันทึกวิดีโอการเรียนการสอนเพื่อให้น้อง ๆ
+                        สามารถกลับมาดูย้อนหลังได้ และในบางสาขานั้นก็ยังมีคลิปวิดีโอส่วนเสริมที่เป็นเกร็ดเล็กเกร็ดน้อย
+                        ที่น้อง ๆ สามารถดูเพื่อเสริมความรู้ให้ตัวเองได้เช่นกัน</p>
+                        </AccordianContent>
+                        <AccordianHeading onClick={() => this.toggleContent(4)}><div>จำเป็นต้องมีความรู้มาก่อนไหม ?</div><Indicator className="indicator" /></AccordianHeading>
+                        <AccordianContent id="content-4"><p>ไม่จำเป็น ขอแค่น้อง ๆ มีความมุ่งมั่นตั้งใจ น้อง ๆ ก็สามารถเข้าร่วมกิจกรรมและมาเรียนรู้กับพี่ ๆ ได้</p>
+                        </AccordianContent>
+                        <AccordianHeading onClick={() => this.toggleContent(5)}><div>ใมีค่าใช้จ่ายในการสมัครไหม ?</div><Indicator className="indicator" /></AccordianHeading>
+                        <AccordianContent id="content-5"><p>ไม่มีค่าใช้จ่าย ฟรีตลอดทั้งโครงการ</p></AccordianContent>
                     </Accordian>
+                    <div className="col-1"></div>
+                    </div>
                 </AccordianCon>
             </Container>
         )
