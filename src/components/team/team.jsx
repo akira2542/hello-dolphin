@@ -218,13 +218,12 @@ const Img = styled.img`
         height : 240px;
     }
     @media (min-width : 768px){
-        width : 45%;
-    }
-    @media (min-width : 800px){
-        width : 35%;
+        width : 400px;
+        height : 370px;
     }
     @media (min-width : 1200px){
         width : 100%;
+        height : auto;
         position : absolute;
         left : -10%;
         margin : 50px 0 0 auto;
