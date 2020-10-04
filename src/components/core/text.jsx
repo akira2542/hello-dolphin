@@ -7,9 +7,11 @@ const HeadLine = styled.h1`
     letter-spacing: 0.1em;
     color: ${props => props.color};
     text-align: ${props => props.textAlign || "center"};
-
+    @media (min-width: 375px) {
+        font-size: 60px;
+    }
     @media (min-width: 768px) {
-        font-size: 90px;
+        font-size: 120px;
     }
 
     @media (min-width: 1024px) {
@@ -45,6 +47,10 @@ font-size: 9px;
 line-height: 18px;
 
 }
+@media (min-width: 375px) {
+        font-size: 10px;
+        line-height: 20px;
+    }
     @media (min-width: 768px) {
         font-size: 18px;
         line-height: 36px;

@@ -21,6 +21,10 @@ overflow : hidden;
 const Whale = styled.img`
 position: absolute;
 width: 65%;
+@media (min-width: 375px){
+    top: -9%;
+    left: -10%;
+}
 @media (min-width: 411px){
     top: -9%;
     left: -10%;
@@ -41,6 +45,10 @@ width: 65%;
 const Turtle = styled.img`
 position: absolute;
 width: 30%;
+@media (min-width: 375px){
+    bottom: 25%;
+    right: 0%;
+}
 @media (min-width: 411px){
     bottom: 25%;
     right: 0%;
@@ -62,6 +70,10 @@ position: absolute;
 right: 45%;
 bottom: 54%;
 width: 55%;
+@media (min-width: 375px){
+bottom: 47%;
+
+}
 @media (min-width: 411px){
 bottom: 45%;
 
@@ -119,6 +131,10 @@ position: absolute;
 left: 60%; 
 width: 65%;
 bottom: 28%;
+@media (min-width: 375px){
+bottom: 22%;
+
+}
 @media (min-width: 411px){
 bottom: 25%;
 
@@ -159,6 +175,9 @@ bottom: 25%;
 `
 const ParentAbout = styled.div`
 padding-bottom: 5%;
+@media (min-width: 375px){
+padding-bottom: 0%;
+}
 @media (min-width: 411px){
 padding-bottom: 0%;
 }
@@ -195,6 +214,11 @@ padding: 20px;
 border-radius: 30px;
 border: 1px ;
 background-color: rgba(252, 204, 171, 0.52);
+@media (min-width: 375px){
+margin-bottom: 0%;
+height: 50%;
+padding-top: 0%;
+}
 @media (min-width: 411px){
 margin-bottom: 0%;
 height: 85%;

@@ -103,7 +103,7 @@ transform: translateX(-50%);
 width: 40%;
 bottom: 6.5%;
 @media (min-width: 375px){
-    bottom: 2.5%;
+    bottom: 3%;
 }
 @media (min-width: 411px) {
         bottom: 4%;
