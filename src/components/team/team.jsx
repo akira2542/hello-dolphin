@@ -215,6 +215,7 @@ const Img = styled.img`
     margin : 0 auto;
     @media (min-width : 360px){
         width : 55vw;
+        height : auto;
     }
     @media (min-width : 768px){
         width : 45%;
