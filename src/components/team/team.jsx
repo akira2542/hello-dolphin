@@ -1,4 +1,3 @@
-
 import React, { Component, Fragment} from 'react'
 import dolphin from '../../assets/images/team/team-dolphin.png'
 import fe_logo from '../../assets/images/team/front-end-logo.png'
@@ -7,7 +6,7 @@ import infra_logo from '../../assets/images/team/infra.png'
 import game_design_logo from '../../assets/images/team/game-design.png'
 import game_dev_logo from '../../assets/images/team/game-dev.png'
 import styled , {keyframes} from 'styled-components'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const theme = {
     frontEnd : {
@@ -38,7 +37,6 @@ const wipWupAnimation = (shadow) => keyframes`
     50% { box-shadow :  0px 0px 26px 1px ${shadow}; }
     100%{ box-shadow :  0px 0px 17px 1px ${shadow}; }
 `
-
 const Button = styled.div`
     color : ${props => props.isActive ? "black" : props.color};
     cursor : pointer;
@@ -52,11 +50,10 @@ const Button = styled.div`
     margin : 20px auto;
     width : ${props => props.width};
     background-color : ${props => props.isActive ? props.color : "none"};
-    box-shadow :  0px 0px 15px 1px ${props => props.isActive ? props.shadow : "none"};
+    transition : .6s ease;
     :hover {
         color : black;
         background-color : ${props => props.color};
-        transition : .4s ease;
         box-shadow :  0px 0px 15px 1px ${props => props.shadow};
     }
     animation : ${props => props.isActive? wipWupAnimation(props.shadow) : "none"} 3s ease-in-out infinite ;
@@ -78,6 +75,22 @@ const Container = styled.div`
     @media (min-width : 1200px){
         height : 100vh;
     }
+    .animationFadeIn{
+        animation: fadeInMobile .6s ease-in;   
+        @media (min-width : 1200px){
+            animation: fadeIn .6s ease-in;   
+        }        
+    }
+    @keyframes fadeInMobile{
+        0% { opacity : 0; }
+        20% { opacity : 0; }
+        100% { opacity: 1; }
+    }
+    @keyframes fadeIn{
+        0% { opacity : 0; margin-left: 50px; }
+        20% { opacity : 0; }
+        100% { opacity: 1; }
+    }
 `
 const SubjectItemContainer = styled.div`
     @media (min-width : 1200px){
@@ -88,10 +101,13 @@ const SubjectItem = styled.div`
     display : flex;
     flex-direction : column;
     padding : 0 !important;
+    div {
+        transition : all .6s ease-in-out;
+        box-shadow :  0px 0px 0px 0px ${props => props.shadow};
+    }
     :hover div {
         color : black;
         background-color : ${props => props.color};
-        transition : .4s ease;
         box-shadow :  0px 0px 15px 1px ${props => props.shadow};
     }
     @media (min-width : 360px){
@@ -110,7 +126,7 @@ const SubjectLogo = styled.div`
     border-radius : 50%;
     margin : 0 auto;
     cursor : pointer;
-    box-shadow :  0px 0px 15px 1px ${props => props.isActive ? props.shadow : "none"};
+    transition : all .6s ease-in-out;
     animation : ${props => props.isActive? wipWupAnimation(props.shadow) : "none"} 3s ease-in-out infinite;
     @media (min-width : 360px){
         width : 12vw;
@@ -238,9 +254,9 @@ const HeaderMobile = styled(Header)`
 `
 function Subject(props){
     return (
-        <SubjectItem  color={props.color} shadow={props.shadow} className="active" onClick={props.onClick}>
+        <SubjectItem className="button" color={props.color} shadow={props.shadow} onClick={props.onClick}>
             <SubjectLogo  src={props.src} isActive={props.isActive} shadow={props.shadow} />
-            <Button  color={props.color} fontSize={"12px"} isActive={props.isActive} shadow={props.shadow} > {props.name} </Button>
+            <Button  color={props.color} fontSize={"12px"} isActive={props.isActive} shadow={props.shadow}  > {props.name} </Button>
         </SubjectItem>
     )
 }
@@ -274,35 +290,45 @@ export default class Team extends Component {
         prevIndex : 0,
         isActive : [true,false,false,false,false],
         headerIndex: 0,
-        contentIndex: 0
+        contentIndex: 0,
+        contentClass : "animationFadeIn",
+        colorCode : [theme.frontEnd.shadow]
     }
 
     changeTopic(index){
-
-        this.setState({
-            headerIndex : index,
-            contentIndex : index
-        })
-
+        setTimeout(()=>{
+            this.setState({
+                headerIndex : index,
+                contentIndex : index
+            })
+        },40);
     }
 
     activeButton(index){
         if(index === this.state.prevIndex) return;
         const active = this.state.isActive;
         const prevIndex = this.state.prevIndex;
+        
         if(active[prevIndex]){
             active[prevIndex] = false;
             active[index] = true;
             this.setState({
-                isActive : active,
-                prevIndex : index
-            })
+                contentClass : ""
+            });
         }
+        setTimeout(()=>{
+            this.setState({
+                isActive : active,
+                prevIndex : index,
+                contentClass : "animationFadeIn"
+            })
+        },20);
     }
-
+    
     handleClick = (index) => {
         this.changeTopic(index);
         this.activeButton(index); 
+
     }
 
     render() {
@@ -318,20 +344,20 @@ export default class Team extends Component {
                     <Column  className="col-12 col-xl-6 offset-xl-1 order-2 order-xl-1">
                         <Header id="teams">Teams</Header>
                         <div className="row">
-                            <SubjectWrapper className="col-12 order-2 order-xl-1">
-                                <SubHeader>{this.state.subject_header[this.state.headerIndex]}</SubHeader>
-                                <Content><p className="content">{this.state.subject_description[this.state.contentIndex]}</p></Content>
-                                <a href="http://" style={styleHref}>
-                                <RegisterButton 
-                                    color="#B9E6E9" 
-                                    shadow="#31CBED"
-                                    width="200px" 
-                                    fontSize="18px" > Register </RegisterButton> </a>
-                            </SubjectWrapper>
-                            <SubjectWrapper className="col-12 order-1 order-xl-2">
-                                <OtherSubject>สาขาอื่นๆ</OtherSubject>
-                                <TotalSubject onClick={(i) => this.handleClick(i)} isActive={this.state.isActive} />
-                            </SubjectWrapper>
+                        <SubjectWrapper className="col-12 order-2 order-xl-1">
+                            <SubHeader className={this.state.contentClass}>{this.state.subject_header[this.state.headerIndex]}</SubHeader>
+                            <Content className={this.state.contentClass}><p>{this.state.subject_description[this.state.contentIndex]}</p></Content>
+                            <a href="http://" style={styleHref}>
+                            <RegisterButton 
+                                color="#B9E6E9" 
+                                shadow="#31CBED"
+                                width="200px" 
+                                fontSize="18px" > Register </RegisterButton> </a>
+                        </SubjectWrapper>
+                        <SubjectWrapper className="col-12 order-1 order-xl-2">
+                            <OtherSubject>สาขาอื่นๆ</OtherSubject>
+                            <TotalSubject onClick={(i) => this.handleClick(i)} isActive={this.state.isActive}  />
+                        </SubjectWrapper>
                         </div>
                     </Column> 
                     <Column  className="col-12 col-xl-5 order-1 order-xl-2">
