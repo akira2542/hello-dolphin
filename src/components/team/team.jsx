@@ -197,7 +197,9 @@ const Content = styled.div`
 const Wrapper = styled.div`
     margin : 0 auto;
 `
-const Column = styled.div` `
+const Column = styled.div` 
+    position : relative;
+`
 const SubjectWrapper = styled.div`
     margin : 10px 0px;
 `
@@ -212,7 +214,7 @@ const RegisterButton = styled(Button)`
 const Img = styled.img`
     margin : 0 auto;
     @media (min-width : 360px){
-        width : 55%;
+        width : 55vw;
     }
     @media (min-width : 768px){
         width : 45%;
@@ -222,6 +224,8 @@ const Img = styled.img`
     }
     @media (min-width : 1200px){
         width : 100%;
+        position : absolute;
+        left : -10%;
         margin : 50px 0 0 auto;
     }
 `
@@ -302,6 +306,10 @@ export default class Team extends Component {
     }
 
     render() {
+        const styleHref = {
+            textDecoration : "none",
+            color : theme.frontEnd.primaryColor
+        }
         return (
             <Fragment>
                 <Container className="container-fluid">
@@ -313,11 +321,12 @@ export default class Team extends Component {
                             <SubjectWrapper className="col-12 order-2 order-xl-1">
                                 <SubHeader>{this.state.subject_header[this.state.headerIndex]}</SubHeader>
                                 <Content><p className="content">{this.state.subject_description[this.state.contentIndex]}</p></Content>
+                                <a href="http://" style={styleHref}>
                                 <RegisterButton 
                                     color="#B9E6E9" 
                                     shadow="#31CBED"
                                     width="200px" 
-                                    fontSize="18px" > Register </RegisterButton>
+                                    fontSize="18px" > Register </RegisterButton> </a>
                             </SubjectWrapper>
                             <SubjectWrapper className="col-12 order-1 order-xl-2">
                                 <OtherSubject>สาขาอื่นๆ</OtherSubject>
@@ -327,7 +336,7 @@ export default class Team extends Component {
                     </Column> 
                     <Column  className="col-12 col-xl-5 order-1 order-xl-2">
                         <div className="row">
-                            <Img src={dolphin} />
+                            <Img src={dolphin} className="img-fluid"/>
                         </div>
                     </Column>
                     </Wrapper>
