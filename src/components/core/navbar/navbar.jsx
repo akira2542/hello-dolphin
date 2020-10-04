@@ -132,7 +132,7 @@ export default class NavBar extends Component {
                             <Link onClick={()=>this.scrollToNode(this.props.innerRefs.home.current,0)}>
                                 <Item>Home</Item>
                             </Link>
-                            <Link onClick={()=>this.scrollToNode(this.props.innerRefs.about.current,200)}>
+                            <Link onClick={()=>this.scrollToNode(this.props.innerRefs.about.current,650)}>
                                 <Item id="about" >About</Item>
                             </Link>
                             <Link onClick={()=>this.scrollToNode(this.props.innerRefs.team.current,-50)}>
