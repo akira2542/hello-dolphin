@@ -2,21 +2,36 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { Header } from '../core/text'
-import Footer from './sponsorfooter'
+import kmuttsit from '../../assets/images/sponsor/KMUTTnSIT-01.png'
 // if state are needed change to class component as you se fit - ruangrit 
 
 const Container = styled.div`
-padding-top:12vh;
-width: 100%;
-height: auto;
-background-color: #023058;
-/* background: linear-gradient(135deg, #00103a 0%, #023058 100%); */
+    padding-top:12vh;
+    width: 100%;
+    height: 100%;
+    background-color: #023058;
 `
 const Border = styled.div`
-width : 100%;
-height: 518px;
-border-radius : 28px;
-background-color:rgb(176, 232, 255,0.85);
+    width : 100%;
+    height: 518px;
+    -webkit-border-radius: 27px;
+    -moz-border-radius: 27px;
+    border-radius: 27px;
+    background-color:rgb(176, 232, 255,0.85);
+`
+
+const Footer = styled.div`
+  	margin-top: 50px;
+    width: 100%;
+    height: 119px;
+    background-color : #B0CCE5;
+    max-width:100%;
+`
+const Kmuttsit = styled.img`
+    padding-top :10px;
+    padding-bottom : 10px;
+    width : 409px;
+    height : 97px;
 `
 
 
@@ -29,12 +44,24 @@ export default function Sponsor() {
                     <div className="col">
                     </div>
                     <div className="col-10">
-                        <Border />
+                        <Border></Border>
                     </div>
                     <div className="col">
                     </div>
                 </div>
-                <Footer />
+                <Footer>
+                    <div className="row">
+                        <div className="col-2">
+
+                        </div>
+                        <div className="col-8">
+                            <Kmuttsit src={kmuttsit} alt="kmuttsit" className="mt-2 img-fluid mx-auto d-flex justify-content-center" />
+                        </div>
+                        <div className="col-2">
+
+                        </div>
+                    </div>
+                </Footer>
             </Container>
         </Fragment >
     )
