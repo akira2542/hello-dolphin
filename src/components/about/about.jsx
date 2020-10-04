@@ -45,7 +45,7 @@ width: 65%;
     left: -25%;
 }
 @media (min-width: 1920px){
-    top: -5%;
+    top: 6%;
    
 }
 
@@ -123,7 +123,7 @@ display: block;
     bottom: 48%;
 }
 @media (min-width: 1920px){
-    bottom: 45%;
+    bottom: 40%;
 }
 /* -webkit-transform: scaleX(-1);
   transform: scaleX(-1); */
@@ -285,7 +285,7 @@ width: 100%;
 `
 const HeaderContainer = styled.div`
 @media(min-width: 1920px){
-margin-top: -10%;
+margin-top: 0%;
 
 }
 `

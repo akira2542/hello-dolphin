@@ -81,11 +81,13 @@ export default class NavBar extends Component {
         let element
         let item
         let topRange = 200
+        let pageRange = 500
         for (const key in refs) {
                 element = ReactDOM.findDOMNode(refs[key].current)
                 item = document.getElementById(key)
-                topRange = (key == "about")? 500 : 200 
-                if (this.isInViewport(element,topRange)) {
+                topRange = (key == "about")? 800 : 200 
+                pageRange = (key == "about")? 1000 : 500 
+                if (this.isInViewport(element,topRange,pageRange)) {
                     // console.log(`${key} : is in viewport`)
                     if (item !== null) {
                         item.style.backgroundColor = "white"
@@ -98,9 +100,9 @@ export default class NavBar extends Component {
         }
     }
 
-    isInViewport = (element,topRange) => {
+    isInViewport = (element,topRange,pageRange) => {
         let bounding = element.getBoundingClientRect();
-        return bounding.top >= -topRange && bounding.left >= 0 && bounding.right <= (window.innerWidth || document.documentElement.clientWidth) && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)+500
+        return bounding.top >= -topRange && bounding.left >= 0 && bounding.right <= (window.innerWidth || document.documentElement.clientWidth) && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)+pageRange
     }
 
     scrollToNode = (ref,yOffset) => {
@@ -130,10 +132,10 @@ export default class NavBar extends Component {
                             <Link onClick={()=>this.scrollToNode(this.props.innerRefs.home.current,0)}>
                                 <Item>Home</Item>
                             </Link>
-                            <Link onClick={()=>this.scrollToNode(this.props.innerRefs.about.current,200)}>
+                            <Link onClick={()=>this.scrollToNode(this.props.innerRefs.about.current,650)}>
                                 <Item id="about" >About</Item>
                             </Link>
-                            <Link onClick={()=>this.scrollToNode(this.props.innerRefs.team.current,-50)}>
+                            <Link onClick={()=>this.scrollToNode(this.props.innerRefs.team.current,-80)}>
                                 <Item id="team">Teams</Item>
                             </Link>
                             <Link onClick={()=>this.scrollToNode(this.props.innerRefs.faqs.current,-80)}>
