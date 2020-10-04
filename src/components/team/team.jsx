@@ -7,11 +7,12 @@ import infra_logo from '../../assets/images/team/infra.png'
 import game_design_logo from '../../assets/images/team/game-design.png'
 import game_dev_logo from '../../assets/images/team/game-dev.png'
 import styled , {keyframes} from 'styled-components'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const theme = {
     frontEnd : {
         primaryColor : "#B9E6E9",
-        secondaryColor : "#31CBED"
+        shadow: "#31CBED"
     },
     webDesign : {
         primaryColor : "#E8BEC6",
@@ -33,16 +34,9 @@ const theme = {
 }
 
 const wipWupAnimation = (shadow) => keyframes`
-    0% {
-        box-shadow :  0px 0px 17px 1px ${shadow};
-    }
-    50% {
-        box-shadow :  0px 0px 26px 1px ${shadow};
-    }
-    100%{
-        box-shadow :  0px 0px 17px 1px ${shadow};
-    }
-
+    0% { box-shadow :  0px 0px 17px 1px ${shadow}; }
+    50% { box-shadow :  0px 0px 26px 1px ${shadow}; }
+    100%{ box-shadow :  0px 0px 17px 1px ${shadow}; }
 `
 
 const Button = styled.div`
@@ -76,7 +70,6 @@ const Button = styled.div`
 const Container = styled.div`
     background-color :  #023058;  
     /* background: linear-gradient(135deg, #00103a 0%, #023058 100%); */
-    height : 100vh;
     color : white;
     font-family : "Rye-Regular";
     @media (min-width : 600px){
@@ -87,22 +80,14 @@ const Container = styled.div`
     }
 `
 const SubjectItemContainer = styled.div`
-    display : flex;
-    width : 100%;
-    align-items : flex-start;
-    @media (min-width : 360px){
-        justify-content : center;
-    }
-    @media (min-width : 1200px) and (max-width : 1320px){
+    @media (min-width : 1200px){
         width : 110%;
     }
-    @media (min-width : 1200px){
-        justify-content : left;
-    }
-`
+ `
 const SubjectItem = styled.div`
     display : flex;
     flex-direction : column;
+    padding : 0 !important;
     :hover div {
         color : black;
         background-color : ${props => props.color};
@@ -110,25 +95,26 @@ const SubjectItem = styled.div`
         box-shadow :  0px 0px 15px 1px ${props => props.shadow};
     }
     @media (min-width : 360px){
-        margin : 0 10px;
+        margin : 0 5px;
         justify-items : center;
     }
-    margin : 10px 20px;
+    @media (min-width : 1200px){
+        margin : 10px 10px;   
+    }
 `
 const SubjectLogo = styled.div`
     background-image : url(${props => props.src});
     background-repeat : no-repeat;
     background-size : cover; 
     background-position : center;
-    margin : 0 auto;
     border-radius : 50%;
+    margin : 0 auto;
     cursor : pointer;
     box-shadow :  0px 0px 15px 1px ${props => props.isActive ? props.shadow : "none"};
     animation : ${props => props.isActive? wipWupAnimation(props.shadow) : "none"} 3s ease-in-out infinite;
-
     @media (min-width : 360px){
-        width : 13vw;
-        height : 13vw;
+        width : 12vw;
+        height : 12vw;
     }
     @media (min-width : 768px){
         width : 10vw;
@@ -188,7 +174,6 @@ const Content = styled.div`
     font-size : 20px;
     font-family : "Itim-Regular";
     text-indent : 50px;
-    text-align : justify;
     @media (min-width : 360px){
         font-size : 16px;
         height : 140px;
@@ -201,46 +186,24 @@ const Content = styled.div`
         font-size : 22px;
         height : 130px;
     }
+    @media (min-width : 866px){
+        height : 110px;
+    }
     @media (min-width : 1200px){
-        height : 150px;
+        height : 140px;
         width : 90%;
     }
 `
 const Wrapper = styled.div`
-    max-width : 80vw;
     margin : 0 auto;
-    display : flex;
-    @media (min-width : 360px){
-        flex-direction : column;
-    }
-    @media (min-width : 1200px){
-        flex-direction : row;
-    }
 `
-const Column = styled.div`
-    display : flex;
-    flex-direction : column;
-    width : 50%;
-    margin : 10px 0;
-    justify-content : center;
-    @media (min-width : 360px){
-        width : 100%;
-        order : ${props => props.order};
-    }
-    @media (min-width : 1200px){
-        flex-direction : column;
-        order : 0;
-    }
-`
+const Column = styled.div` `
 const SubjectWrapper = styled.div`
-    @media (max-width : 1199px){
-        margin : 20px 0px;
-        order : ${props => props.order};
-    }
+    margin : 10px 0px;
 `
 const RegisterButton = styled(Button)`
     display : block;
-    margin-top : 30px;
+    margin : 30px auto 0 auto;
     @media (max-width : 1200px){
         font-size : 16px;
         width : 25vw;
@@ -264,13 +227,14 @@ const Img = styled.img`
 `
 const HeaderMobile = styled(Header)`
     display : block;
+    margin : 0 auto;
     @media (min-width : 1200px){
         display : none;
     }
 `
 function Subject(props){
     return (
-        <SubjectItem color={props.color} shadow={props.shadow} className="active" onClick={props.onClick}>
+        <SubjectItem  color={props.color} shadow={props.shadow} className="active" onClick={props.onClick}>
             <SubjectLogo  src={props.src} isActive={props.isActive} shadow={props.shadow} />
             <Button  color={props.color} fontSize={"12px"} isActive={props.isActive} shadow={props.shadow} > {props.name} </Button>
         </SubjectItem>
@@ -278,13 +242,13 @@ function Subject(props){
 }
 function TotalSubject(props){
     return (
-    <SubjectItemContainer>
-        <Subject src={fe_logo}  name="Front-End" color={theme.frontEnd.primaryColor} shadow={theme.frontEnd.secondaryColor} onClick={() => props.onClick(0)} isActive={props.isActive[0]}/>
-        <Subject src={web_design_logo}  name="Web Design" color={theme.webDesign.primaryColor} shadow={theme.webDesign.shadow} onClick={() => props.onClick(1)} isActive={props.isActive[1]} />
-        <Subject src={infra_logo} name="Infrastructure" color={theme.infrastructure.primaryColor} shadow={theme.infrastructure.shadow} onClick={() => props.onClick(2)} isActive={props.isActive[2]} />
-        <Subject src={game_design_logo}  name="Game Design" color={theme.gameDesign.primaryColor} shadow={theme.gameDesign.shadow} onClick={() => props.onClick(3)} isActive={props.isActive[3]} />
-        <Subject src={game_dev_logo}  name="Game Development" color={theme.gameDev.primaryColor} shadow={theme.gameDev.shadow} onClick={() => props.onClick(4)} isActive={props.isActive[4]}  />
-    </SubjectItemContainer>
+        <SubjectItemContainer className="row justify-content-center justify-content-xl-start">
+            <Subject src={fe_logo} name="Front-End" color={theme.frontEnd.primaryColor} shadow={theme.frontEnd.shadow} onClick={() => props.onClick(0)} isActive={props.isActive[0]} />
+            <Subject src={web_design_logo}  name="Web Design" color={theme.webDesign.primaryColor} shadow={theme.webDesign.shadow} onClick={() => props.onClick(1)} isActive={props.isActive[1]} />
+            <Subject src={infra_logo} name="Infrastructure" color={theme.infrastructure.primaryColor} shadow={theme.infrastructure.shadow} onClick={() => props.onClick(2)} isActive={props.isActive[2]} />
+            <Subject src={game_design_logo}  name="Game Design" color={theme.gameDesign.primaryColor} shadow={theme.gameDesign.shadow} onClick={() => props.onClick(3)} isActive={props.isActive[3]} />
+            <Subject src={game_dev_logo}  name="Game Development" color={theme.gameDev.primaryColor} shadow={theme.gameDev.shadow} onClick={() => props.onClick(4)} isActive={props.isActive[4]}  />
+        </SubjectItemContainer>
     )
 }
 export default class Team extends Component {
@@ -297,7 +261,7 @@ export default class Team extends Component {
             "Game Developer"
         ],
         subject_description : [
-            `ในสาขานี้จะพาไปเปิดโลกของการเป็นนักพัฒนาเว็บไซต์ ซึ่งจะได้เรียนรู้ตั้งเเต่ HTML & CSS, Javascript เเละการใช้ git จนถึงการเขียน React ซึ่งเป็นสิ่งที่มีความต้องการสูง ในสายงาน IT ในปัจจุบัน`,
+            'ในสาขานี้จะพาไปเปิดโลกของการเป็นนักพัฒนาเว็บไซต์ ซึ่งจะได้เรียนรู้ตั้งเเต่ HTML & CSS, Javascript เเละการใช้ git จนถึงการเขียน React ซึ่งเป็นสิ่งที่มีความต้องการสูง ในสายงาน IT ในปัจจุบัน',
             `ในสาขานี้จะพาไปทำความรู้จักกับขั้นตอนในการ Design ที่เกี่ยวกับ Web Design โดยเริ่มตั้งแต่องค์ประกอบของการออกแบบเว็บไซต์, UX/UI, Adobe illustrator, ลิขสิทธิ์ ไปจนถึงการทำ Prototype ของงาน`,
             `ในสาขานี้จะพาไปรู้จักกับการวางโครงสร้างพื้นฐานของระบบของการสร้างและพัฒนาเว็บไซต์ต่างๆ ที่จะทำให้ทุกคนสามารถเข้าถึงเว็บไซต์ของเราได้ รวมถึงยังมีการสอนใช้เครื่องมือต่างๆที่จำเป็นต่อการวางระบบของเรา นอกจากนี้ยังได้เรียนรู้การทำงานแบบ DevOps อีกด้วย`,
             `ในสาขานี้จะพาไปพบการทำเกมบนเว็บไซต์ โดยการเรียนรู้ว่าเกมบนเว็บไซต์ที่เราเห็นกันนั้น มีองค์ประกอบอะไรบ้าง และจะสามารถสร้างเกมบนเว็บไซต์ขึ้นมาได้อย่างไรในเบื้องต้น รวมไปถึงจะได้ฝึกทักษะการทำงานเป็นทีมอีกด้วย`,
@@ -340,27 +304,31 @@ export default class Team extends Component {
     render() {
         return (
             <Fragment>
-                <Container>
-                    <Wrapper>
+                <Container className="container-fluid">
+                    <Wrapper className="row">
                         <HeaderMobile id="teams">Teams</HeaderMobile>
-                    <Column order="2">
+                    <Column  className="col-12 col-xl-6 offset-xl-1 order-2 order-xl-1">
                         <Header id="teams">Teams</Header>
-                        <SubjectWrapper order="2">
-                            <SubHeader>{this.state.subject_header[this.state.headerIndex]}</SubHeader>
-                            <Content><p className="content">{this.state.subject_description[this.state.contentIndex]}</p></Content>
-                            <RegisterButton 
-                                color="#B9E6E9" 
-                                shadow="#31CBED"
-                                width="200px" 
-                                fontSize="18px" > Register </RegisterButton>
-                        </SubjectWrapper>
-                        <SubjectWrapper order="1">
-                            <OtherSubject>สาขาอื่นๆ</OtherSubject>
-                            <TotalSubject onClick={(i) => this.handleClick(i)} isActive={this.state.isActive} />
-                        </SubjectWrapper>
+                        <div className="row">
+                            <SubjectWrapper className="col-12 order-2 order-xl-1">
+                                <SubHeader>{this.state.subject_header[this.state.headerIndex]}</SubHeader>
+                                <Content><p className="content">{this.state.subject_description[this.state.contentIndex]}</p></Content>
+                                <RegisterButton 
+                                    color="#B9E6E9" 
+                                    shadow="#31CBED"
+                                    width="200px" 
+                                    fontSize="18px" > Register </RegisterButton>
+                            </SubjectWrapper>
+                            <SubjectWrapper className="col-12 order-1 order-xl-2">
+                                <OtherSubject>สาขาอื่นๆ</OtherSubject>
+                                <TotalSubject onClick={(i) => this.handleClick(i)} isActive={this.state.isActive} />
+                            </SubjectWrapper>
+                        </div>
                     </Column> 
-                    <Column order="1">
-                        <Img src={dolphin} />
+                    <Column  className="col-12 col-xl-5 order-1 order-xl-2">
+                        <div className="row">
+                            <Img src={dolphin} />
+                        </div>
                     </Column>
                     </Wrapper>
                 </Container>
