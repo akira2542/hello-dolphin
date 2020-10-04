@@ -5,9 +5,8 @@ import ReactDOM from 'react-dom'
 
 
 const Open = styled.div`
-
 position: fixed;
-z-index: 1;
+z-index: 900;
 top: 20px;
 left: 20px;
 cursor: pointer;
