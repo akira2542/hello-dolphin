@@ -176,7 +176,7 @@ export default class aboutfooter extends Component {
             <Fragment>
                 <AiKwaiBoonTumMaiMeFragMentLeawYungJaMeDivEek>
                 <div>
-                    <Sunrise src={sunrise} />
+                    <Sunrise className = {salite.sunrise} src={sunrise} />
                     <Waterblue src={waterblue} />
                     <Sunshadow src={sunshadow} />
                     <Waterpink className = {salite.salitepailoeyframekaiserX} src={waterpink} />
