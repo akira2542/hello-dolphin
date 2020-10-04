@@ -22,23 +22,31 @@ const Whale = styled.img`
 position: absolute;
 width: 65%;
 @media (min-width: 375px){
-    top: -9%;
-    left: -10%;
+    top: -1%;
+    left: -17%;
 }
 @media (min-width: 411px){
-    top: -9%;
-    left: -10%;
+    left: -17%;
 }
 
 @media (min-width: 768px){
-    left: -5%;
 }
 @media (min-width: 1024px){
-    top: 14%;
-    left: -5%;
+    top: 21%;
+    left: -17%;
 }
 @media (min-width: 1140px){
-   display: none;
+    top: -1%;
+    left: -17%;
+
+}
+@media (min-width: 1280px){
+    top: 3%;
+    left: -25%;
+}
+@media (min-width: 1920px){
+    top: -5%;
+   
 }
 
 `
@@ -62,7 +70,17 @@ width: 30%;
     right: 0%;
 }
 @media (min-width: 1140px){
-   display: none;
+    bottom: 20%;
+
+}
+@media (min-width: 1280px){
+    bottom: 22%;
+
+}
+@media (min-width: 1920px){
+    bottom: 28%;
+    width: 20%;
+
 }
 `
 const CloudLeft = styled.img`
@@ -91,20 +109,21 @@ display: block;
 
 }
 @media (min-width: 1280px){
-    bottom: 53%;
+    bottom: 52%;
 }
 @media (min-width: 1366px){
     bottom: 51%;
 
 }
 @media (min-width: 1440px){
-    bottom: 50%;
+    bottom: 48%;
 
 }
 @media (min-width: 1820px){
     bottom: 48%;
-    
-
+}
+@media (min-width: 1920px){
+    bottom: 45%;
 }
 /* -webkit-transform: scaleX(-1);
   transform: scaleX(-1); */
@@ -136,7 +155,7 @@ bottom: 22%;
 
 }
 @media (min-width: 411px){
-bottom: 25%;
+bottom: 22%;
 
 }
 @media (min-width: 768px){
@@ -153,7 +172,7 @@ bottom: 25%;
     
 }
 @media (min-width: 1140px){
-    bottom: 15%;
+    bottom: 16.5%;
     left: 60%; 
 
 }
@@ -172,6 +191,9 @@ bottom: 25%;
 @media (min-width: 1820px){
     bottom: 20%;
 }
+@media (min-width: 1920px){
+    bottom: 22%;
+}
 `
 const ParentAbout = styled.div`
 padding-bottom: 5%;
@@ -183,7 +205,7 @@ padding-bottom: 0%;
 }
 @media (min-width: 768px){
 padding-bottom: 10%;
-padding-top: 10%;
+padding-top: 0%;
 
 }
 @media (min-width: 1024px){
@@ -203,7 +225,10 @@ padding-bottom: 30%;
 padding-top: 25%;
 padding-bottom: 50%;
 }
-
+@media (min-width: 1920px){
+padding-top: 15%;
+padding-bottom: 15%;
+}
 
 `
 const AboutBorder = styled.div`
@@ -247,7 +272,8 @@ height: 75%;
 padding: 5%;
 width: 100%;
 }
-@media (min-width: 1440px){
+@media (min-width: 1920px){
+    margin-bottom: 40%;
 }
 `
 const ClayTop = styled.img`
@@ -255,14 +281,13 @@ width: 100%;
 @media (min-width: 375px){
     margin-top: 0%;
 }
-@media (min-width: 411px) {
-    }
 
-/* @media (min-width: 411px){
-    margin-top: -7%;
-} */
+`
+const HeaderContainer = styled.div`
+@media(min-width: 1920px){
+margin-top: -10%;
 
-
+}
 `
 
 
@@ -273,15 +298,14 @@ export default class About extends Component {
                 <AboutContainer>
                
                  <ClayTop src={clay} />
+                <HeaderContainer><Header color="black" textAlign="center" headerText="About"/></HeaderContainer> 
+
                  <Whale src={whale} />
                   <CloudLeft className={salite.salitepailoeykonmekloidai} src={cloudLeft} />
                   <CloudRight className={salite.salitepailoeykonmekloidai2} src={cloudRight} />
                   <CloudRight2 className={salite.salitepailoeykonmekloidai3} src={cloudRight2} />
-                  
-                    <div className="container">
-                            <Header color="black" textAlign="center" headerText="About" />
                  
-                
+                    <div className="container">
                     <div className="row">
                         <div className="col-auto">
                             <ParentAbout>

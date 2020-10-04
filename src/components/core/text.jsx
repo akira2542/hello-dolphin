@@ -20,6 +20,9 @@ const HeadLine = styled.h1`
     @media (min-width: 1440px) {
         font-size: 120px;
     }
+    @media (min-width: 1920px) {
+        font-size: 150px;
+    }
     
 `
 

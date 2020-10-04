@@ -97,6 +97,9 @@ bottom: 12%;
 @media (min-width: 1440px){
     bottom: 10%;
 }
+@media (min-width: 1440px){
+    bottom: 11%;
+}
 
 `
 const Sunshadow = styled.img`
@@ -137,7 +140,9 @@ bottom: 6.5%;
 @media (min-width: 1440px){
     bottom: 5.5%;
 }
-
+@media (min-width: 1920px){
+    bottom: 6%;
+}
 
 
 
