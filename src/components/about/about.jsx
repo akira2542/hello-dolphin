@@ -5,7 +5,7 @@ import { Header, Content } from '../core/text'
 import cloudLeft from '../../assets/images/about/cloud_left.png'
 import cloudRight from '../../assets/images/about/cloud_right.png';
 import cloudRight2 from '../../assets/images/about/cloud_right2.png';
-
+import salite from './Mhoooonnnsaliteeee.scss'
 import clay from '../../assets/images/about/clay.png';
 import Footer from './aboutfooter'
 import whale from '../../assets/images/about/whale.png'
@@ -274,9 +274,9 @@ export default class About extends Component {
                
                  <ClayTop src={clay} />
                  <Whale src={whale} />
-                  <CloudLeft src={cloudLeft} />
-                  <CloudRight src={cloudRight} />
-                  <CloudRight2 src={cloudRight2} />
+                  <CloudLeft className={salite.salitepailoeykonmekloidai} src={cloudLeft} />
+                  <CloudRight className={salite.salitepailoeykonmekloidai2} src={cloudRight} />
+                  <CloudRight2 className={salite.salitepailoeykonmekloidai3} src={cloudRight2} />
                   
                     <div className="container">
                             <Header color="black" textAlign="center" headerText="About" />
