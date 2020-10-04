@@ -39,8 +39,11 @@ const Logo = styled.img`
         width: 60%;
     }
 
-    @media (min-width: 1500x) {
+    @media (min-width: 1500px) {
         width: 50%;
+    }
+    @media (max-height: 500px) {
+        width: 300px;
     }
 `
 
@@ -60,6 +63,9 @@ const Facebook = styled.img`
     @media (min-width: 1024px) {
         width: 4%;
         margin-right: 1%;
+    }
+    @media (max-height: 500px) {
+        width: 45px;
     }
 `
 

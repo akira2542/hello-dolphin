@@ -26,6 +26,9 @@ const CoralShadowLeft = styled.img`
     @media (min-width: 1440px) {
         width: 53%;
     }
+    @media (max-height: 500px) {
+        width: 400px;
+    }
 `
 
 const CoralOrange = styled.img`
