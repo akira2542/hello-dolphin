@@ -214,8 +214,8 @@ const RegisterButton = styled(Button)`
 const Img = styled.img`
     margin : 0 auto;
     @media (min-width : 360px){
-        width : 55vw;
-        height : auto;
+        width : 250px;
+        height : 240px;
     }
     @media (min-width : 768px){
         width : 45%;
