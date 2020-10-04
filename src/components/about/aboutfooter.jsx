@@ -72,8 +72,8 @@ bottom: 12%;
  @media (min-width: 375px){
     bottom: 6%;
 }
-@media (min-width: 441px) {
-        bottom: 6%;
+@media (min-width: 411px) {
+        bottom: 7%;
     }
 @media (min-width: 554px){
     bottom: 6%;
@@ -89,7 +89,10 @@ bottom: 12%;
     bottom: 8%;
 }
 @media (min-width: 1024px){
-    bottom: 11%;
+    bottom: 8%;
+}
+@media (min-width: 1440px){
+    bottom: 10%;
 }
 
 `
@@ -102,8 +105,8 @@ bottom: 6.5%;
 @media (min-width: 375px){
     bottom: 2.5%;
 }
-@media (min-width: 441px) {
-        bottom: 3%;
+@media (min-width: 411px) {
+        bottom: 4%;
     }
     
 @media (min-width: 554px){
@@ -123,10 +126,10 @@ bottom: 6.5%;
     bottom: 4%;
 }
 @media (min-width: 1024px){
-    bottom: 6.5%;
+    bottom: 5%;
 }
 @media (min-width: 1440px){
-    bottom: 7%;
+    bottom: 6%;
 }
 
 
