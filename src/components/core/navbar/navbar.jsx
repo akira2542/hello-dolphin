@@ -46,7 +46,7 @@ const Item = styled.div `
     justify-content: center;
     transition: 0.3s ease-in-out;
     :hover {
-        background-color : #D3F7F8;
+        background-color : #D3F7F8 !important;
         color: black;
     }
 `
