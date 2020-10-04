@@ -2,10 +2,28 @@ import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 import { Header } from '../core/text'
 
+import dolp_img from '../../assets/images/faqs/underocean_dophin.png'
+import whale_img from '../../assets/images/faqs/underocean_whale.png'
+
 const Container = styled.div`
 width: 100%;
-height: 100vh;
+height: 700px;
+padding: 40px 0 0 0;
+position: relative;
 background-color: #023058;
+@media (min-width : 768px){
+    height: 1000px;
+    } 
+@media (min-width : 1080px){
+    height: 1000px;
+    padding: 20px 0 0 0;
+    }  
+@media (min-width : 1280px){
+    height: 1100px;
+    }  
+@media (min-width : 1980px){
+    height: 1200px;
+    }  
 /* background: linear-gradient(45deg, #00103a 0%, #023058 100%); */
 `
 
@@ -13,12 +31,20 @@ const AccordianCon = styled.div`
 width: 100%;
 /* display: flex;
 justify-content: center; */
-margin-top: 50px;
+margin-top: 20px;
+@media (min-width : 764px){
+    margin-top: 80px;
+    }
 `
 const Accordian = styled.div`
 font-family: 'Itim-Regular';
 width: 80%;
-@media (min-width : 600px){
+font-size: 10px;
+z-index: 1;
+@media (min-width : 414px){
+    font-size: 12px;
+    }
+@media (min-width : 768px){
     font-size: 18px;
     }
 @media (min-width : 1080px){
@@ -34,7 +60,7 @@ const AccordianHeading = styled.div`
 width: 100%;
 background-color: #A6D4FF;
 display: flex;
-padding: 20px 20px;
+padding: 10px 10px;
 cursor : pointer;
 transition: 0.3s ease-in-out;
 border-radius: 3px; 
@@ -45,17 +71,25 @@ border: 1px solid black;
             transform : translate(0,5px)
         }
     }
+    @media (min-width : 1280px){
+        padding: 20px 20px;
+    }   
 `
 const Indicator = styled.div`
   width: 0; 
   height: 0; 
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 15px solid black;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid black;
   margin-left: auto;
   margin-right: 15px;
   align-self: center;
   transition : 0.3s ease-in-out;
+  @media (min-width : 768px){
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid black;
+    }   
 `
 
 const AccordianContent = styled.div`
@@ -70,6 +104,43 @@ margin-bottom: 12px;
     margin: 0.5em 1em 0.5em 1em;
  }
 `
+
+const DolphinBg = styled.img`
+    position : absolute;
+    right: 0px;
+    width: 150px;
+    bottom: 100px;
+    @media (min-width : 768px){
+        bottom: 80px;
+        right: 10px;
+        width: 300px;
+    }
+    @media (min-width : 1080px){
+        width: 400px;
+    }
+    @media (min-width : 1280px){
+        bottom: 40px;
+        right: 0px;
+    }
+    @media (min-width : 1920px){
+        width: 450px;
+        right: 10px;
+    }
+`
+const WhaleBg = styled.img`
+    position : absolute;
+    left: 0;
+    bottom: 70px;
+    width: 200px;
+    @media (min-width : 768px){
+        bottom: 0px;
+        width: 500px;
+    }
+    @media (min-width : 1080px){
+        bottom: -100px;
+        width: 700px;
+    }
+`  
 
 export default class Faqs extends Component {
 
@@ -150,6 +221,8 @@ export default class Faqs extends Component {
                     <div className="col-1"></div>
                     </div>
                 </AccordianCon>
+                <DolphinBg src={dolp_img}/>
+                <WhaleBg src={whale_img} />
             </Container>
         )
     }
