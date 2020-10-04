@@ -76,10 +76,10 @@ bottom: 12%;
         bottom: 7%;
     }
 @media (min-width: 554px){
-    bottom: 6%;
+    bottom: 7.5%;
 }
 @media (min-width: 654px){
-    bottom: 7%;
+    bottom: 7.5%;
 }
 
 @media (min-width: 884px){
@@ -90,6 +90,9 @@ bottom: 12%;
 }
 @media (min-width: 1024px){
     bottom: 8%;
+}
+@media (min-width: 1280px){
+    bottom: 8.5%;
 }
 @media (min-width: 1440px){
     bottom: 10%;
@@ -106,31 +109,35 @@ bottom: 6.5%;
     bottom: 3%;
 }
 @media (min-width: 411px) {
-        bottom: 4%;
+        bottom: 3.5%;
     }
     
 @media (min-width: 554px){
-    bottom: 3%;
+    bottom: 4%;
 }
 @media (min-width: 654px){
-    bottom: 3.5%;
+    bottom: 4%;
 }
-@media (min-width: 738px){
-    bottom: 3.6%;
+@media (min-width: 768px){
+    bottom: 4%;
 }
 
 @media (min-width: 884px){
-    bottom: 3.5%;
+    bottom: 4%;
 }
 @media (min-width: 984px){
     bottom: 4%;
 }
 @media (min-width: 1024px){
+    bottom: 4.5%;
+}
+@media (min-width: 1280px){
     bottom: 5%;
 }
 @media (min-width: 1440px){
-    bottom: 6%;
+    bottom: 5.5%;
 }
+
 
 
 

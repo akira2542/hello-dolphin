@@ -253,7 +253,7 @@ width: 100%;
 const ClayTop = styled.img`
 width: 100%;
 @media (min-width: 375px){
-    margin-top: -4.2%;
+    margin-top: 0%;
 }
 @media (min-width: 411px) {
     }
