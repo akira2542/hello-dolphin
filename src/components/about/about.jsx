@@ -204,7 +204,6 @@ padding-top: 25%;
 padding-bottom: 50%;
 }
 
-
 `
 const AboutBorder = styled.div`
 margin-top: 17%;
