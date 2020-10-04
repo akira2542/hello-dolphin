@@ -29,10 +29,11 @@ const bobble = keyframes`
 
 const Container = styled.div`
 width: 100%;
-height: 700px;
+height: 600px;
 padding: 40px 0 0 0;
 position: relative;
 background-color: #023058;
+
 @media (min-width : 768px){
     height: 1000px;
     } 
@@ -207,14 +208,17 @@ export default class Faqs extends Component {
     expandContent = (element,indicator) => {
         element.style.maxHeight = "200px"
         element.style.border = "1px solid black"
+        if (window.innerWidth < 1080) return
         indicator.style.borderTopColor = "white"
         indicator.style.transform = "translate(0,5px)"
     }
 
     collaspContent = (element,indicator) => {
         element.style.maxHeight = "0"
+        if (window.innerWidth >= 1080) {
         indicator.style.borderTopColor = "black"
         indicator.style.transform = "translate(0,0)"
+        }
         setTimeout(() => {
             element.style.border = "0px"
         }, 300);
