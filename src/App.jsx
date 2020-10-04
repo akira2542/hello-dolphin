@@ -1,7 +1,7 @@
 import React from 'react'
-import style from '~/App.css' // Use Local CSS Not import '~/App.css' 
-import 'bootstrap/dist/css/bootstrap.min.css' //this is how you import bootstrap
-import {createGlobalStyle} from 'styled-components';
+// import style from '~/App.css' // Use Local CSS Not import '~/App.css' 
+import 'bootstrap/dist/css/bootstrap.css'; //this is how you import bootstrap
+import { createGlobalStyle } from 'styled-components';
 import Navbar from './components/core/navbar/navbar'
 import SideBar from './components/core/navbar/sidebar'
 import Home from './components/home/home'
@@ -18,6 +18,25 @@ import itimFont2 from './assets/font-family/Itim/Itim-Regular.woff2';
 
 
 const Globalstyle = createGlobalStyle`
+
+  body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
 
 @font-face {
     font-family: 'Rye-Regular';
@@ -38,24 +57,24 @@ const Globalstyle = createGlobalStyle`
 export default class App extends React.Component {
     //create ref for navgation bar
     navRefs = {
-        home : React.createRef(),
-        about : React.createRef(),
-        team : React.createRef(),
-        faqs : React.createRef()
+        home: React.createRef(),
+        about: React.createRef(),
+        team: React.createRef(),
+        faqs: React.createRef()
     }
-         
+
     render() {
         return (
             <React.Fragment>
                 <Globalstyle />
-                <Home ref={this.navRefs.home}/>
-                <About ref={this.navRefs.about}/>
-                <Team ref={this.navRefs.team}/>
-                <Faqs ref={this.navRefs.faqs}/>
-                <Sponsor/>
-                <SponsorFooter/>
-                <Navbar innerRefs={this.navRefs}/>
-                <SideBar innerRefs={this.navRefs}/>
+                <Home ref={this.navRefs.home} />
+                <About ref={this.navRefs.about} />
+                <Team ref={this.navRefs.team} />
+                <Faqs ref={this.navRefs.faqs} />
+                <Sponsor />
+                <SponsorFooter />
+                <Navbar innerRefs={this.navRefs} />
+                <SideBar innerRefs={this.navRefs} />
             </React.Fragment>
         )
     }

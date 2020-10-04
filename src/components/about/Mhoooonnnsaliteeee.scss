@@ -58,7 +58,7 @@
         transform: translateX(0vw);
     }
     50%{
-        transform: translateX(5vw);
+        transform: translateX(10vw);
     }
     100%{
         transform: translateX(0vw);
@@ -81,8 +81,8 @@
     animation: saliteMek1 60s ease-in-out infinite;
 }
 .salitepailoeykonmekloidai2 {
-    animation: saliteMek2 45s ease-in-out infinite;
+    animation: saliteMek2 30s ease-in-out infinite;
 } 
 .salitepailoeykonmekloidai3 {
-    animation: saliteMek3 60s ease-in-out infinite;
-}  
+    animation: saliteMek3 45s ease-in-out infinite;
+} 

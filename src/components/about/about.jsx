@@ -10,6 +10,7 @@ import clay from '../../assets/images/about/clay.png';
 import Footer from './aboutfooter'
 import whale from '../../assets/images/about/whale.png'
 import turtle from '../../assets/images/about/turtle.png'
+import Fallenstar from './fallenstar'
 // if state are needed change to class component as you se fit - ruangrit 
 const AboutContainer = styled.div`
 background-color:#FF8782;
@@ -296,7 +297,7 @@ export default class About extends Component {
         return (
             <Fragment>
                 <AboutContainer>
-               
+                <Fallenstar/>
                  <ClayTop src={clay} />
                 <HeaderContainer><Header color="black" textAlign="center" headerText="About"/></HeaderContainer> 
 

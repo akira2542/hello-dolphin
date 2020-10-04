@@ -17,18 +17,20 @@ const Kmuttsit = styled.img`
 `
 export default function SponsorFooter() {
     return (
-        <Footer>
-            <div className="row">
-                <div className="col-4">
+        <Fragment>
+            {/* <div style={styless}>
+                <div className="row">
+                    <div className="col-4">
 
-                </div>
-                <div className="col-4">
-                    <Kmuttsit src={kmuttsit} alt="kmuttsit" className="mt-2"/>
-                </div>
-                <div className="col-4">
+                    </div>
+                    <div className="col-4">
+                        <Kmuttsit src={kmuttsit} alt="kmuttsit" className="mt-2" />
+                    </div>
+                    <div className="col-4">
 
+                    </div>
                 </div>
-            </div>
-        </Footer>
+            </div> */}
+        </Fragment>
     )
 }
