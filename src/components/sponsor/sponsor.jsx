@@ -40,7 +40,7 @@ export default function Sponsor() {
     return (
         <Fragment>
             <Container>
-                {/* <Header color="white " textAlign="center" headerText="Sponsor" />
+                <Header color="white " textAlign="center" headerText="Sponsor" />
                 <div className="row pt-5" style={{
                     marginLeft: "0px",
                     marginRight: "0px",
@@ -52,7 +52,7 @@ export default function Sponsor() {
                     </div>
                     <div className="col" style={{zIndex:0}}>
                     </div>
-                </div> */}
+                </div>
             </Container>
         </Fragment >
     )

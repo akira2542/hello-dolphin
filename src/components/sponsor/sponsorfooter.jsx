@@ -14,6 +14,15 @@ const Container = styled.div`
         min-height: 30vh;
         padding-top:350px;
       }
+      @media (min-width: 1080px){
+        padding-top:500px;
+      }
+      @media (min-width: 1300px){
+        padding-top:600px;
+      }
+      @media (min-width: 1500px){
+        padding-top: 800px;
+      }
     
 `
 const Footer = styled.div`
@@ -42,7 +51,7 @@ const Underocean = styled.img`
         bottom: 70px;
     }
     @media (min-width: 1600px){
-        bottom: 23%;
+        bottom: 50px;
     }
 `
 
