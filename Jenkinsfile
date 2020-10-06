@@ -62,6 +62,12 @@ pipeline {
         sh' sudo docker push gunfluenza/hellodolphin:${BRANCH_NAME}'
       }
     }
+   
+    stage('Delete old Hellodolphin WebPR on Helm') {
+      steps {
+        sh "helm uninstall webpr${BRANCH_NAME} -n ${BRANCH_NAME}"
+      } // End steps
+    } // End stage
     
     stage('Deploy new Hellodolphin WebPR on Helm') {
       steps {
