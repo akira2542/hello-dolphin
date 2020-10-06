@@ -52,6 +52,7 @@ width: 65%;
 
 `
 const Turtle = styled.img`
+/* background: url(${turtle}); */
 position: absolute;
 width: 30%;
 @media (min-width: 375px){
@@ -71,15 +72,20 @@ width: 30%;
     right: 0%;
 }
 @media (min-width: 1140px){
-    bottom: 20%;
+    bottom: 24%;
 
 }
 @media (min-width: 1280px){
-    bottom: 22%;
+    bottom: 27%;
 
 }
-@media (min-width: 1920px){
+@media (min-width: 1440px){
     bottom: 28%;
+}
+@media (min-width: 1920px){
+    bottom: 30%;
+    right: 3%;
+
     width: 20%;
 
 }
@@ -105,26 +111,26 @@ bottom: 45%;
     display: none;
 }
 @media (min-width: 1140px){
-    bottom: 52%;
+    bottom: 47%;
 display: block;
 
 }
 @media (min-width: 1280px){
-    bottom: 52%;
+    bottom: 49%;
 }
 @media (min-width: 1366px){
-    bottom: 51%;
+    bottom: 47%;
 
 }
 @media (min-width: 1440px){
-    bottom: 48%;
+    bottom: 45%;
 
 }
 @media (min-width: 1820px){
-    bottom: 48%;
+    bottom: 45%;
 }
 @media (min-width: 1920px){
-    bottom: 40%;
+    bottom: 38%;
 }
 /* -webkit-transform: scaleX(-1);
   transform: scaleX(-1); */
@@ -173,12 +179,12 @@ bottom: 22%;
     
 }
 @media (min-width: 1140px){
-    bottom: 16.5%;
+    bottom: 21%;
     left: 60%; 
 
 }
 @media (min-width: 1280px){
-    bottom: 20%;
+    bottom: 24%;
 
 }
 @media (min-width: 1366px){
@@ -186,7 +192,7 @@ bottom: 22%;
 
 }
 @media (min-width: 1440px){
-    bottom: 17%;
+    bottom: 21%;
 
 }
 @media (min-width: 1820px){
@@ -285,8 +291,18 @@ width: 100%;
 
 `
 const HeaderContainer = styled.div`
-@media(min-width: 1920px){
+@media(min-width: 1140px){
 margin-top: 0%;
+margin-bottom: -10%;
+
+}
+@media(min-width: 1280px){
+margin-top: 0%;
+margin-bottom: -7%;
+
+}
+@media(min-width: 1920px){
+margin-bottom: -5%;
 
 }
 `
@@ -297,7 +313,7 @@ export default class About extends Component {
         return (
             <Fragment>
                 <AboutContainer>
-                <Fallenstar/>
+                {/* <Fallenstar/> */}
                  <ClayTop src={clay} />
                 <HeaderContainer><Header color="black" textAlign="center" headerText="About"/></HeaderContainer> 
 

@@ -91,6 +91,9 @@ bottom: 12%;
 @media (min-width: 1024px){
     bottom: 8%;
 }
+@media (min-width: 1140px){
+    bottom: 9%;
+}
 @media (min-width: 1280px){
     bottom: 8.5%;
 }
@@ -131,8 +134,12 @@ bottom: 6.5%;
 @media (min-width: 984px){
     bottom: 4%;
 }
+
 @media (min-width: 1024px){
     bottom: 4.5%;
+}
+@media (min-width: 1140px){
+    bottom: 5%;
 }
 @media (min-width: 1280px){
     bottom: 5%;
