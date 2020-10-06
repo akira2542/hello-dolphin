@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "Hellodolphin.fullname" . }}
+  labels:
+    {{- include "Hellodolphin.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: devport
+      nodePort: 31000
+  selector:
+    {{- include "Hellodolphin.selectorLabels" . | nindent 4 }}

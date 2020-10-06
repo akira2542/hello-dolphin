@@ -1,0 +1,88 @@
+@keyframes saliteX {
+    0%{
+        transform: translateX(0vw);
+    }
+    50%{
+        transform: translateX(5vw);
+    }
+    100%{
+        transform: translateX(0vw);
+    }
+}
+@keyframes saliteY {
+    0%{
+        transform: translateY(0vw);
+    }
+    50%{
+        transform: translateY(1vw);
+    }
+    100%{
+        transform: translateY(0vw);
+    }
+}
+@keyframes thistitanicgonnarotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(-2deg) translateX(1vw);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+@keyframes saliteMek1 {
+    0%{
+        transform: translateX(0vw);
+    }
+    50%{
+        transform: translateX(-10vw);
+    }
+    100%{
+        transform: translateX(0vw);
+    }
+}
+@keyframes saliteMek2 {
+    0%{
+        transform: translateX(0vw);
+    }
+    50%{
+        transform: translateX(-5vw);
+    }
+    100%{
+        transform: translateX(0vw);
+    }
+}
+@keyframes saliteMek3 {
+    0%{
+        transform: translateX(0vw);
+    }
+    50%{
+        transform: translateX(10vw);
+    }
+    100%{
+        transform: translateX(0vw);
+    }
+}
+
+.salitepailoeyframekaiserX {
+    animation: saliteX 5s ease-in-out infinite;
+} 
+.salitepailoeyframekaiserX2{
+    animation : saliteX 4s ease-in-out infinite;
+}
+.salitepailoeyframekaiserX3{
+    animation : saliteY 8s ease-in-out infinite;
+}
+.rotateandspinlikeyouheadgonnablowingup{
+    animation : thistitanicgonnarotate 4s ease-in-out infinite;
+}
+.salitepailoeykonmekloidai {
+    animation: saliteMek1 60s ease-in-out infinite;
+}
+.salitepailoeykonmekloidai2 {
+    animation: saliteMek2 30s ease-in-out infinite;
+} 
+.salitepailoeykonmekloidai3 {
+    animation: saliteMek3 45s ease-in-out infinite;
+} 
