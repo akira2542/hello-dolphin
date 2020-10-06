@@ -5,14 +5,13 @@
 replicaCount: 4
 
 image:
-  repository: gunfluenza/hellodolphin
-  pullPolicy: Always
+  repository: 
+  pullPolicy: 
   # Overrides the image tag whose default is the chart version.
-  tag: "dev"
-
-imagePullSecrets: ""
-nameOverride: ""
-fullnameOverride: ""
+  tag: 
+imagePullSecrets: 
+nameOverride: 
+fullnameOverride: 
 
 serviceAccount:
   # Specifies whether a service account should be created
