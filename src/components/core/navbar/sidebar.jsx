@@ -118,6 +118,9 @@ export default function SideBar(props) {
     }
 
     const scrollToNode = (ref,yOffset) => {
+        if ( window.innerWidth > 1000 && window.innerWidth < 1080) {
+            yOffset = (ref.constructor.name == "About")? 300 : yOffset
+        }
         let node = ReactDOM.findDOMNode(ref)
         let y = node.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({top: y, behavior: 'smooth'});
