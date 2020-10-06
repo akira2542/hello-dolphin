@@ -245,6 +245,10 @@ const RegisterButton = styled(Button)`
         font-size : 16px;
         width : 25vw;
     }
+    @media (min-width : 1600px){
+        font-size : 16px;
+        width : 250px;
+    }
 `
 const Img = styled.img`
     margin : 0 auto;
@@ -369,7 +373,7 @@ export default class Team extends Component {
                         <SubjectWrapper className="col-12 order-2 order-xl-1">
                             <SubHeader className={this.state.contentClass}>{this.state.subject_header[this.state.headerIndex]}</SubHeader>
                             <Content className={this.state.contentClass}><p>{this.state.subject_description[this.state.contentIndex]}</p></Content>
-                            <a href="http://" style={styleHref}>
+                            <a href="https://forms.gle/x49vhcQFAxXVDp3cA" target="_blank" style={styleHref}>
                             <RegisterButton 
                                 color="#B9E6E9" 
                                 shadow="#31CBED"
