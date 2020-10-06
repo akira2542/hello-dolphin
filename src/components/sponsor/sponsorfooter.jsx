@@ -6,11 +6,11 @@ import underoceancoral from '../../assets/images/sponsorfooter/underocean_coral.
 import underoceanturtle from '../../assets/images/sponsorfooter/underocean_turtle.png'
 const Container = styled.div`
     width: 100%;
-    padding-top:200px;
+    padding-top:100px;
     background-color: #023058;
     position: relative;
     min-height: -webkit-fill-available;
-    @media (min-width: 700px){
+      @media (min-width: 700px){
         min-height: 30vh;
         padding-top:350px;
       }
@@ -27,15 +27,11 @@ const Container = styled.div`
 `
 const Footer = styled.div`
     z-index : 90;
-    position : relative;
-  	margin-top: 0px;
+    position : absolute;
     width: 100%;
     height: unset;
     background-color : #B0CCE5;
-
-        @media (min-width: 700px){
-
-      }
+    bottom: 0;
 `
 const Underocean = styled.img`
     position: absolute;
