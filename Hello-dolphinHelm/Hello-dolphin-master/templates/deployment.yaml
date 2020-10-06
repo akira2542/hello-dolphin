@@ -49,6 +49,5 @@ spec:
       {{- end }}
       {{- with .Values.tolerations }}
       tolerations:
-      - key: "key"
-        operator: "Exists"
-        effect: "NoSchedule"
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
