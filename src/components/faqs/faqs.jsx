@@ -95,6 +95,9 @@ border: 1px solid black;
         }
     }
     @media (min-width : 1280px){
+        padding: 10px 10px;
+    } 
+    @media (min-width : 1400px){
         padding: 20px 20px;
     }   
     
@@ -134,14 +137,14 @@ const DolphinBg = styled.img`
     right: 0px;
     width: 150px;
     bottom: 100px;
-    @media (min-width : 768px){
+    @media (min-width : 700px){
         bottom: 80px;
         right: 10px;
         width: 300px;
+        animation: ${bobble} 5s infinite ease-in-out;
     }
     @media (min-width : 1080px){
         width: 400px;
-        animation: ${bobble} 5s infinite ease-in-out;
     }
     @media (min-width : 1280px){
         bottom: 40px;
@@ -158,14 +161,15 @@ const WhaleBg = styled.img`
     left: 0;
     bottom: 70px;
     width: 200px;
-    @media (min-width : 768px){
+    @media (min-width : 700px){
         bottom: 0px;
         width: 500px;
+        animation: ${bobble} 17s infinite ease-in-out;
     }
     @media (min-width : 1080px){
         bottom: -100px;
         width: 700px;
-        animation: ${bobble} 17s infinite ease-in-out;
+
     }
 `
 

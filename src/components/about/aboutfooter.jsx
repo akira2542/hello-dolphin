@@ -91,6 +91,9 @@ bottom: 12%;
 @media (min-width: 1024px){
     bottom: 8%;
 }
+@media (min-width: 1140px){
+    bottom: 9%;
+}
 @media (min-width: 1280px){
     bottom: 8.5%;
 }
@@ -131,8 +134,12 @@ bottom: 6.5%;
 @media (min-width: 984px){
     bottom: 4%;
 }
+
 @media (min-width: 1024px){
     bottom: 4.5%;
+}
+@media (min-width: 1140px){
+    bottom: 5%;
 }
 @media (min-width: 1280px){
     bottom: 5%;
@@ -160,21 +167,18 @@ width: 55%;
     bottom: -0.5%;
 }
 `
-const AiKwaiBoonTumMaiMeFragMentLeawYungJaMeDivEek = styled.div`
+const Wrapper = styled.div`
     overflow : hidden;
 `
 
 // if state are needed change to class component as you se fit - ruangrit 
 
 export default class aboutfooter extends Component {
-    componentDidMount() {
-        console.log(salite);
-    }
     
     render() {
         return (
-            <Fragment>
-                <AiKwaiBoonTumMaiMeFragMentLeawYungJaMeDivEek>
+
+                <Wrapper>
                 <div>
                     <Sunrise className = {salite.sunrise} src={sunrise} />
                     <Waterblue src={waterblue} />
@@ -184,8 +188,8 @@ export default class aboutfooter extends Component {
                     <Boat className = {salite.rotateandspinlikeyouheadgonnablowingup} src={boat} />
                     <Waterdark className = {salite.salitepailoeyframekaiserX3} src={waterdark} />
                 </div>
-                </AiKwaiBoonTumMaiMeFragMentLeawYungJaMeDivEek>
-            </Fragment>
+                </Wrapper>
+
         )
     }
 }

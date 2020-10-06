@@ -71,7 +71,7 @@ export default class App extends React.Component {
                 <About ref={this.navRefs.about} />
                 <Team ref={this.navRefs.team} />
                 <Faqs ref={this.navRefs.faqs} />
-                <Sponsor />
+                {/* <Sponsor /> */}
                 <SponsorFooter />
                 <Navbar innerRefs={this.navRefs} />
                 <SideBar innerRefs={this.navRefs} />
