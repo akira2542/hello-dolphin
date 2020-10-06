@@ -5,77 +5,93 @@ import kmuttsit from '../../assets/images/sponsorfooter/KMUTTnSIT-01.png'
 import underoceancoral from '../../assets/images/sponsorfooter/underocean_coral.png'
 import underoceanturtle from '../../assets/images/sponsorfooter/underocean_turtle.png'
 const Container = styled.div`
-    padding-top:350px;
     width: 100%;
-    height: 100%;
+    padding-top:200px;
     background-color: #023058;
     position: relative;
-    // min-height: 100vh;
-    // min-height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
+    @media (min-width: 700px){
+        min-height: 30vh;
+        padding-top:350px;
+      }
+    
 `
 const Footer = styled.div`
-  	margin-top: 50px;
+    z-index : 90;
+    position : relative;
+  	margin-top: 0px;
     width: 100%;
-    height: 119px;
+    height: unset;
     background-color : #B0CCE5;
-    max-width:100%;
+
+        @media (min-width: 700px){
+
+      }
 `
 const Underocean = styled.img`
     position: absolute;
     right: 100%;
-    bottom: 23%;
+    bottom: 20px;
     left: -0.24%;
     width: 100%;    
     z-index:1;
+    @media (min-width: 700px){
+        bottom: 30px;
+    }
+    @media (min-width: 1080px){
+        bottom: 70px;
+    }
+    @media (min-width: 1600px){
+        bottom: 23%;
+    }
 `
 
 const Underturtle = styled.img`
     position: absolute;
-    width: 30%;
-    z-index:20;
+    z-index: 20;
+    width: 120px;
+    bottom: 100px; 
+    left: 80px; 
+    @media (min-width: 700px){
+        width: 250px;
+        bottom:150px; 
+        left:150px; 
+      }
+      @media (min-width: 1000px){
+        width: 300px;
+        bottom:150px; 
+        left:250px; 
+      } 
+    @media (min-width: 1200px){
+        width: 300px;
+        bottom:320px; 
+        left:350px; 
+      }
+    @media (min-width: 1440px){
+        width: 350px;
+        bottom:320px; 
+        left:350px; 
+      }
+    @media (min-width: 1600px){
+        width: 350px;
+        bottom:420px; 
+        left:500px; 
+      }
 
-    top:220px; 
-    left:130px; 
-    max-width:575px; 
-    
-    //  @media (min-width: 375px){
-    //      top:220px; 
-    // left:130px; 
-    //  }
-    //  @media (min-width: 411px){
-    //     top:220px; 
-    // left:130px; 
-    //  }
-    //  @media (min-width: 768px){
-    //      top:220px; 
-    // left:130px; 
-    //  }
-    //  @media (min-width: 1024px){
-    //      top:220px; 
-    // left:130px; 
-    //  }
-    //  @media (min-width: 1140px){
-    //    top:220px; 
-    // left:130px; 
-
-    //  }
-    //  @media (min-width: 1280px){
-    //      top:220px; 
-    // left:130px; 
-
-    //  }
-    //  @media (min-width: 1920px){
-    //      top:220px; 
-    //     left:130px; 
-
-    //  }
 `
 
 const Kmuttsit = styled.img`
-    padding-top :10px;
-    padding-bottom : 10px;
-    width : 409px;
-    height : 97px;
+    padding:0px 0 5px ;
+    height: 30px;
+    @media (min-width: 700px){
+        height: 50px;
+      }
+      @media (min-width: 1080px){
+        height: 75px;
+      }
+      @media (min-width: 1600px){
+        height: 100px;
+      }
     
 `
 
