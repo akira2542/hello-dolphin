@@ -81,10 +81,11 @@ const Container = styled.div`
         padding-top : 20px;
     }
     @media (min-width : 1400px){
-        height : 100vh;
+        min-height : 110vh;
         padding-top : 40px;
     }
     @media (min-width : 1600px){
+        min-height : 100vh;
         padding-top : 80px;
     }
     .animationFadeIn{

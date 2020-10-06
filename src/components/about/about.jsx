@@ -299,7 +299,8 @@ margin-bottom: -10%;
 @media(min-width: 1280px){
 margin-top: 0%;
 margin-bottom: -7%;
-
+z-index: 20;
+position: relative;
 }
 @media(min-width: 1920px){
 margin-bottom: -5%;
