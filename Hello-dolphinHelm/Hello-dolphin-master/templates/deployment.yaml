@@ -50,5 +50,5 @@ spec:
       {{- with .Values.tolerations }}
       tolerations:
       - key: "key"
-      operator: "Exists"
-      effect: "NoSchedule"
+        operator: "Exists"
+        effect: "NoSchedule"
