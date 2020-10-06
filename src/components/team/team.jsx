@@ -63,17 +63,29 @@ const Button = styled.div`
     @media (min-width : 1200px){
         display : block;
     }
+    @media (min-width : 1600px){
+        width : 150px;
+    }
 `
 const Container = styled.div`
     background-color :  #023058;  
     /* background: linear-gradient(135deg, #00103a 0%, #023058 100%); */
     color : white;
     font-family : "Rye-Regular";
+    padding-top : 40px;
     @media (min-width : 600px){
         height : auto;
     }
     @media (min-width : 1200px){
         height : 100vh;
+        padding-top : 20px;
+    }
+    @media (min-width : 1400px){
+        height : 100vh;
+        padding-top : 40px;
+    }
+    @media (min-width : 1600px){
+        padding-top : 80px;
     }
     .animationFadeIn{
         animation: fadeInMobile .6s ease-in;   
@@ -143,6 +155,10 @@ const SubjectLogo = styled.div`
     @media (min-width : 1200px){
         width : 89px;
         height : 89px;
+    }
+    @media (min-width : 1600px){
+        width : 120px;
+        height : 120px;
     }
 `
 const OtherSubject = styled.h4`
@@ -242,6 +258,9 @@ const Img = styled.img`
         height : auto;
         position : absolute;
         left : -10%;
+        margin : 150px 0 0 auto;
+    }
+    @media (min-width : 1600px){
         margin : 50px 0 0 auto;
     }
 `
