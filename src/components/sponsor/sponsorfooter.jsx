@@ -5,11 +5,11 @@ import kmuttsit from '../../assets/images/sponsorfooter/KMUTTnSIT-01.png'
 import underoceancoral from '../../assets/images/sponsorfooter/underocean_coral.png'
 import underoceanturtle from '../../assets/images/sponsorfooter/underocean_turtle.png'
 const Container = styled.div`
-    width: 100%;
+    /* width: 100%; */
     padding-top:100px;
     background-color: #023058;
     position: relative;
-    min-height: -webkit-fill-available;
+    /* min-height: -webkit-fill-available; */
       @media (min-width: 700px){
         padding-top:350px;
       }
