@@ -63,17 +63,29 @@ const Button = styled.div`
     @media (min-width : 1200px){
         display : block;
     }
+    @media (min-width : 1600px){
+        width : 150px;
+    }
 `
 const Container = styled.div`
     background-color :  #023058;  
     /* background: linear-gradient(135deg, #00103a 0%, #023058 100%); */
     color : white;
     font-family : "Rye-Regular";
+    padding-top : 40px;
     @media (min-width : 600px){
         height : auto;
     }
     @media (min-width : 1200px){
         height : 100vh;
+        padding-top : 20px;
+    }
+    @media (min-width : 1400px){
+        height : 100vh;
+        padding-top : 40px;
+    }
+    @media (min-width : 1600px){
+        padding-top : 80px;
     }
     .animationFadeIn{
         animation: fadeInMobile .6s ease-in;   
@@ -144,6 +156,10 @@ const SubjectLogo = styled.div`
         width : 89px;
         height : 89px;
     }
+    @media (min-width : 1600px){
+        width : 120px;
+        height : 120px;
+    }
 `
 const OtherSubject = styled.h4`
     font-size: 32px;
@@ -209,6 +225,9 @@ const Content = styled.div`
         height : 140px;
         width : 90%;
     }
+    @media (min-width : 1600px){
+        white-space : pre-wrap;
+    }
 `
 const Wrapper = styled.div`
     margin : 0 auto;
@@ -242,6 +261,9 @@ const Img = styled.img`
         height : auto;
         position : absolute;
         left : -10%;
+        margin : 150px 0 0 auto;
+    }
+    @media (min-width : 1600px){
         margin : 50px 0 0 auto;
     }
 `
@@ -281,7 +303,7 @@ export default class Team extends Component {
             "Game Developer"
         ],
         subject_description : [
-            'ในสาขานี้จะพาไปเปิดโลกของการเป็นนักพัฒนาเว็บไซต์ ซึ่งจะได้เรียนรู้ตั้งเเต่ HTML & CSS, Javascript เเละการใช้ git จนถึงการเขียน React ซึ่งเป็นสิ่งที่มีความต้องการสูง ในสายงาน IT ในปัจจุบัน',
+            "ในสาขานี้จะพาไปเปิดโลกของการเป็นนักพัฒนาเว็บไซต์ ซึ่งจะได้เรียนรู้ตั้งเเต่ \n HTML & CSS, Javascript เเละการใช้ git จนถึงการเขียน React ซึ่งเป็นสิ่งที่มีความต้องการสูง \n ในสายงาน IT ในปัจจุบัน",
             `ในสาขานี้จะพาไปทำความรู้จักกับขั้นตอนในการ Design ที่เกี่ยวกับ Web Design โดยเริ่มตั้งแต่องค์ประกอบของการออกแบบเว็บไซต์, UX/UI, Adobe illustrator, ลิขสิทธิ์ ไปจนถึงการทำ Prototype ของงาน`,
             `ในสาขานี้จะพาไปรู้จักกับการวางโครงสร้างพื้นฐานของระบบของการสร้างและพัฒนาเว็บไซต์ต่างๆ ที่จะทำให้ทุกคนสามารถเข้าถึงเว็บไซต์ของเราได้ รวมถึงยังมีการสอนใช้เครื่องมือต่างๆที่จำเป็นต่อการวางระบบของเรา นอกจากนี้ยังได้เรียนรู้การทำงานแบบ DevOps อีกด้วย`,
             `ในสาขานี้จะพาไปพบการทำเกมบนเว็บไซต์ โดยการเรียนรู้ว่าเกมบนเว็บไซต์ที่เราเห็นกันนั้น มีองค์ประกอบอะไรบ้าง และจะสามารถสร้างเกมบนเว็บไซต์ขึ้นมาได้อย่างไรในเบื้องต้น รวมไปถึงจะได้ฝึกทักษะการทำงานเป็นทีมอีกด้วย`,
