@@ -11,10 +11,10 @@ const Container = styled.div`
     position: relative;
     min-height: -webkit-fill-available;
       @media (min-width: 700px){
-        min-height: 30vh;
         padding-top:350px;
       }
       @media (min-width: 1080px){
+        min-height: 30vh;
         padding-top:500px;
       }
       @media (min-width: 1300px){
