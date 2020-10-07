@@ -63,7 +63,7 @@ const Button = styled.div`
     @media (min-width : 1200px){
         display : block;
     }
-    @media (min-width : 1600px){
+    @media (min-width : 1800px){
         width : 150px;
     }
 `
@@ -77,15 +77,15 @@ const Container = styled.div`
         height : auto;
     }
     @media (min-width : 1200px){
-        height : 100vh;
+        height : 120vh;
         padding-top : 20px;
     }
     @media (min-width : 1400px){
-        min-height : 110vh;
-        padding-top : 40px;
+        min-height : 120vh;
+        padding-top : 30px;
     }
-    @media (min-width : 1600px){
-        min-height : 100vh;
+    @media (min-width : 1900px){
+        min-height : 110vh;
         padding-top : 80px;
     }
     .animationFadeIn{
@@ -158,6 +158,10 @@ const SubjectLogo = styled.div`
         height : 89px;
     }
     @media (min-width : 1600px){
+        width : 99px;
+        height : 99px;
+    }
+    @media (min-width : 1800px){
         width : 120px;
         height : 120px;
     }
@@ -246,7 +250,7 @@ const RegisterButton = styled(Button)`
         font-size : 16px;
         width : 25vw;
     }
-    @media (min-width : 1600px){
+    @media (min-width : 1800px){
         font-size : 16px;
         width : 250px;
     }
