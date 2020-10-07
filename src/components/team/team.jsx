@@ -63,7 +63,7 @@ const Button = styled.div`
     @media (min-width : 1200px){
         display : block;
     }
-    @media (min-width : 1600px){
+    @media (min-width : 1800px){
         width : 150px;
     }
 `
@@ -82,10 +82,10 @@ const Container = styled.div`
     }
     @media (min-width : 1400px){
         min-height : 110vh;
-        padding-top : 40px;
+        padding-top : 30px;
     }
-    @media (min-width : 1600px){
-        min-height : 100vh;
+    @media (min-width : 1900px){
+        min-height : 110vh;
         padding-top : 80px;
     }
     .animationFadeIn{
@@ -246,7 +246,7 @@ const RegisterButton = styled(Button)`
         font-size : 16px;
         width : 25vw;
     }
-    @media (min-width : 1600px){
+    @media (min-width : 1800px){
         font-size : 16px;
         width : 250px;
     }
