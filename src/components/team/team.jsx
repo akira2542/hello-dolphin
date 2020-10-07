@@ -158,6 +158,10 @@ const SubjectLogo = styled.div`
         height : 89px;
     }
     @media (min-width : 1600px){
+        width : 99px;
+        height : 99px;
+    }
+    @media (min-width : 1800px){
         width : 120px;
         height : 120px;
     }
