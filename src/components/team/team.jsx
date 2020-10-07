@@ -77,11 +77,11 @@ const Container = styled.div`
         height : auto;
     }
     @media (min-width : 1200px){
-        height : 100vh;
+        height : 120vh;
         padding-top : 20px;
     }
     @media (min-width : 1400px){
-        min-height : 110vh;
+        min-height : 120vh;
         padding-top : 30px;
     }
     @media (min-width : 1900px){
