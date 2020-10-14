@@ -246,6 +246,12 @@ const SubjectWrapper = styled.div`
 const RegisterButton = styled(Button)`
     display : block;
     margin : 30px auto 0 auto;
+    :hover{
+        background-color : #6c757d;
+        color : white;
+        box-shadow : none;
+        cursor : not-allowed;
+    }
     @media (max-width : 1200px){
         font-size : 16px;
         width : 25vw;
@@ -378,12 +384,10 @@ export default class Team extends Component {
                         <SubjectWrapper className="col-12 order-2 order-xl-1">
                             <SubHeader className={this.state.contentClass}>{this.state.subject_header[this.state.headerIndex]}</SubHeader>
                             <Content className={this.state.contentClass}><p>{this.state.subject_description[this.state.contentIndex]}</p></Content>
-                            <a href="https://forms.gle/x49vhcQFAxXVDp3cA" target="_blank" style={styleHref}>
-                            <RegisterButton 
+                            <RegisterButton className="btn btn-secondary disabled" 
                                 color="#B9E6E9" 
-                                shadow="#31CBED"
                                 width="200px" 
-                                fontSize="18px" > Register </RegisterButton> </a>
+                                fontSize="18px" > Register </RegisterButton> 
                         </SubjectWrapper>
                         <SubjectWrapper className="col-12 order-1 order-xl-2">
                             <OtherSubject>สาขาอื่นๆ</OtherSubject>
